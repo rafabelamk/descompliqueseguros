@@ -29,6 +29,16 @@ export default function StickyStack({ items }) {
                     </p>
                   ))}
                 </div>
+                {item.bullets && (
+                  <ul className="mt-4 space-y-2">
+                    {item.bullets.map((bullet, bi) => (
+                      <li key={bi} className="flex items-start gap-2.5 text-sm font-light leading-relaxed text-black/70">
+                        <span className="shrink-0">{bullet.emoji}</span>
+                        <span>{bullet.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
           </motion.div>

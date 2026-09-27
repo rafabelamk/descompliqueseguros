@@ -10,8 +10,8 @@ const areas = [
   {
     title: "Seguro de vida",
     icon: <IconHeart />,
-    href: "/o-que-e-seguro-de-vida",
-    cta: "O que é seguro de vida",
+    href: "/seguros/seguro-de-vida",
+    cta: "Ver coberturas",
   },
   {
     title: "Plano de saúde | Plano de saúde para Pet",

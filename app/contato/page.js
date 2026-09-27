@@ -12,24 +12,25 @@ export default function ContatoPage() {
   return (
     <>
       <ImageHero src={assets.home.heroPhoto} alt="Descomplique Seguros" tone="navy">
-        <div className="mx-auto max-w-2xl text-center text-white">
-          <BlurWords
-            as="h1"
-            text="Fique seguro hoje"
-            className="text-[30px] font-light sm:text-[42px]"
-          />
-          <p className="mt-6 text-[16px] font-light leading-relaxed text-white/80">
-            Em 2022, com 612,9 mil acidentes e 2.538 óbitos registrados para
-            pessoas com carteira assinada, a mortalidade no mercado de
-            trabalho formal voltou a apresentar a maior taxa dos últimos dez
-            anos: 7 notificações a cada 100 mil vínculos empregatícios, em
-            média.
-          </p>
-          <p className="mt-4 text-[16px] font-light text-white/80">
-            Não se preocupe! Temos a solução pra você.
-          </p>
-        </div>
+        <BlurWords
+          as="h1"
+          text="Fique seguro hoje"
+          className="text-[30px] font-light text-white sm:text-[42px]"
+        />
       </ImageHero>
+
+      <section className="mx-auto max-w-2xl px-6 text-center">
+        <p className="text-[16px] font-light leading-relaxed text-black/70">
+          Em 2022, com 612,9 mil acidentes e 2.538 óbitos registrados para
+          pessoas com carteira assinada, a mortalidade no mercado de
+          trabalho formal voltou a apresentar a maior taxa dos últimos dez
+          anos: 7 notificações a cada 100 mil vínculos empregatícios, em
+          média.
+        </p>
+        <p className="mt-4 text-[16px] font-light text-black/70">
+          Não se preocupe! Temos a solução pra você.
+        </p>
+      </section>
 
       <section className="px-6 py-24 lg:px-10 lg:py-[160px]">
         <ContactForm />

@@ -27,7 +27,7 @@ const depoimentos = [
 export default function ClientesPage() {
   return (
     <>
-      <ImageHero src={assets.clientes[1]} alt="Clientes Descomplique Seguros" tone="deep">
+      <ImageHero src={assets.sobreNos[0]} alt="Clientes Descomplique Seguros" tone="deep">
         <BlurWords
           as="h1"
           text="Clientes"

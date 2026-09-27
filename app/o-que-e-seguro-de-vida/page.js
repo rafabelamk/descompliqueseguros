@@ -17,33 +17,47 @@ const sections = [
     icon: assets.seguroDeVida.oQueE,
     title: "O que é",
     body: [
-      "Seguro de vida é sinônimo de proteção financeira.",
-      "Diante de alguns imprevistos – como morte, acidente ou uma doença grave – o planejamento financeiro de toda a família pode se desequilibrar. Imagine se você não tivesse nenhuma renda hoje, qual seria o impacto na sua vida? E na de seus familiares?",
-      "O seguro existe justamente para auxiliar nos momentos difíceis em que você, ou seus dependentes, podem precisar de dinheiro para manter sua qualidade de vida e proteger seu patrimônio.",
+      "Seguro de vida é sinônimo de proteção financeira. Imagine se você não tivesse nenhuma renda hoje — qual seria o impacto na sua vida e na de seus familiares?",
+    ],
+    bullets: [
+      { emoji: "🛡️", text: "Proteção financeira para você e sua família" },
+      { emoji: "⚠️", text: "Cobre imprevistos como morte, acidente ou doença grave" },
+      { emoji: "💰", text: "Garante renda caso você não possa mais trabalhar" },
+      { emoji: "🏡", text: "Preserva seu patrimônio e a qualidade de vida dos seus dependentes" },
     ],
   },
   {
     icon: assets.seguroDeVida.comoFunciona,
     title: "Como funciona",
-    body: [
-      "É simples. Caso o imprevisto coberto pelo seguro aconteça, você (ou seu beneficiário) deve entrar em contato com a seguradora para comunicar o ocorrido e enviar os documentos necessários.",
-      "O valor contratado – também chamado de capital segurado – será pago assim que a análise da documentação for concluída e aprovada. Para facilitar a solicitação de benefício, é recomendado avisar à sua família ou aos seus beneficiários onde estão guardados os documentos do seguro, como a apólice.",
+    body: ["É simples. Veja o passo a passo caso o imprevisto coberto pelo seguro aconteça:"],
+    bullets: [
+      { emoji: "📞", text: "Você (ou seu beneficiário) aciona a seguradora" },
+      { emoji: "📋", text: "Envia a documentação necessária sobre o ocorrido" },
+      { emoji: "✅", text: "Após a análise e aprovação, o capital segurado é pago" },
+      { emoji: "🗂️", text: "Vale avisar a família onde fica guardada a apólice" },
     ],
   },
   {
     icon: assets.seguroDeVida.comoContrato,
     title: "Como contrato",
-    body: [
-      "Caso o imprevisto coberto pelo seguro aconteça, você (ou seu beneficiário) deve entrar em contato com a seguradora para comunicar o ocorrido e enviar os documentos necessários.",
-      "O valor contratado – também chamado de capital segurado – será pago assim que a análise da documentação for concluída e aprovada. Para facilitar a solicitação de benefício, é recomendado avisar à sua família ou aos seus beneficiários onde estão guardados os documentos do seguro, como a apólice.",
+    body: ["Caso o imprevisto coberto pelo seguro aconteça, o processo de acionamento é:"],
+    bullets: [
+      { emoji: "📞", text: "Você (ou seu beneficiário) aciona a seguradora" },
+      { emoji: "📋", text: "Envia a documentação necessária sobre o ocorrido" },
+      { emoji: "✅", text: "Após a análise e aprovação, o capital segurado é pago" },
+      { emoji: "🗂️", text: "Vale avisar a família onde fica guardada a apólice" },
     ],
   },
   {
     icon: assets.seguroDeVida.precoDeUmCafe,
     title: "Preço de um café",
     body: [
-      "O preço de um seguro de vida pode variar de acordo com as coberturas escolhidas, faixa etária do segurado, sexo, profissão, hábitos (como fumar), dentre outros fatores. Muitas pessoas pensam que uma solução desse tipo é cara.",
-      "No entanto, algumas coberturas custam menos do que um cafezinho por dia. Você já pensou que pode gastar mais com o seu carro do que com o seu bem mais valioso: sua vida?",
+      "Muita gente pensa que um seguro de vida é caro — mas o custo varia bastante conforme o seu perfil.",
+    ],
+    bullets: [
+      { emoji: "☕", text: "Algumas coberturas custam menos que um café por dia" },
+      { emoji: "📊", text: "O valor varia por idade, sexo, profissão e hábitos (como fumar)" },
+      { emoji: "🚗", text: "Você pode gastar mais com o carro do que protegendo a sua vida" },
     ],
   },
 ];
@@ -51,7 +65,7 @@ const sections = [
 export default function OQueESeguroDeVidaPage() {
   return (
     <>
-      <ImageHero src={assets.home.autoridadePhoto} alt="Seguro de vida" tone="navy">
+      <ImageHero src={assets.sobreNos[2]} alt="Seguro de vida" tone="navy">
         <BlurWords
           as="h1"
           text="O que é seguro de vida"

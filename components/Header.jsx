@@ -2,46 +2,20 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { useMotionValueEvent, useScroll, motion } from "framer-motion";
 import { useState } from "react";
 import { nav, site, contact } from "@/lib/site";
 import { assets } from "@/lib/assets";
 
-// Páginas com hero escuro/colorido → cabeçalho branco (M2, tema por página).
-const LIGHT_TEXT_ROUTES = ["/", "/sobre-nos", "/plano-de-saude"];
-
+// Cabeçalho fixo, sempre visível (sem esconder ao rolar), navy sobre
+// fundo claro semi-opaco com leve blur.
 export default function Header() {
-  const pathname = usePathname();
-  const isLightText = LIGHT_TEXT_ROUTES.includes(pathname);
-
-  const { scrollY } = useScroll();
-  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
 
-  useMotionValueEvent(scrollY, "change", (y) => {
-    const prev = scrollY.getPrevious() ?? 0;
-    setHidden(y > prev && y > 120);
-  });
-
-  const textColor = isLightText ? "text-white" : "text-navy";
-
   return (
-    <motion.header
-      animate={{ y: hidden && !open ? -150 : 0, opacity: hidden && !open ? 0 : 1 }}
-      transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-      className={`fixed inset-x-0 top-0 z-50 h-16 backdrop-blur-[50px] ${textColor}`}
-    >
+    <header className="fixed inset-x-0 top-0 z-50 h-16 border-b border-line/60 bg-bg/90 text-navy backdrop-blur-[20px]">
       <div className="mx-auto flex h-full max-w-content items-center justify-between px-6 lg:px-10">
         <Link href="/" className="focus-ring flex items-center gap-2">
-          <Image
-            src={assets.logo}
-            alt={site.name}
-            width={120}
-            height={68}
-            className={`h-9 w-auto ${isLightText ? "brightness-0 invert" : ""}`}
-            priority
-          />
+          <Image src={assets.logo} alt={site.name} width={120} height={68} className="h-9 w-auto" priority />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
@@ -62,9 +36,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Falar no WhatsApp"
-            className={`focus-ring micro-transition hidden h-[30px] w-[30px] items-center justify-center rounded-[6px] border hover:opacity-70 sm:flex ${
-              isLightText ? "border-white/70" : "border-navy/60"
-            }`}
+            className="focus-ring micro-transition hidden h-[30px] w-[30px] items-center justify-center rounded-[6px] border border-navy/60 hover:opacity-70 sm:flex"
           >
             <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.15-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.148.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
@@ -102,6 +74,6 @@ export default function Header() {
           </nav>
         </div>
       )}
-    </motion.header>
+    </header>
   );
 }
