@@ -58,7 +58,7 @@ export default function HomePage() {
         </div>
       </ImageHero>
 
-      <section className="mx-auto max-w-content px-6 py-24 lg:px-10 lg:py-[160px]">
+      <section className="mx-auto max-w-content px-6 py-12 lg:px-10 lg:py-12">
         <div className="mb-10 flex items-center justify-between">
           <BlurWords
             as="h2"
@@ -79,7 +79,7 @@ export default function HomePage() {
         />
       </section>
 
-      <section className="bg-surface px-6 py-24 lg:px-10 lg:py-[160px]">
+      <section className="bg-surface px-6 py-12 lg:px-10 lg:py-12">
         <div className="mx-auto grid max-w-content items-center gap-14 lg:grid-cols-2">
           <div className="relative aspect-[4/3] overflow-hidden rounded-card">
             <Image

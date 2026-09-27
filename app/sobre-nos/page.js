@@ -61,7 +61,7 @@ export default function SobreNosPage() {
         </div>
       </section>
 
-      <section className="px-6 py-12 lg:px-10 lg:py-16">
+      <section className="px-6 py-8 lg:px-10 lg:py-10">
         <div className="mx-auto grid max-w-content grid-cols-3 gap-4 sm:gap-6">
           <div className="card flex flex-col items-center justify-center p-6 text-center sm:p-8">
             <p className="text-[36px] text-navy sm:text-[50px]">
@@ -90,7 +90,7 @@ export default function SobreNosPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-content px-6 py-24 lg:px-10 lg:py-[160px]">
+      <section className="mx-auto max-w-content px-6 py-8 lg:px-10 lg:py-10">
         <div className="grid gap-6 sm:grid-cols-3">
           {highlights.map((section) => (
             <div key={section.title} className="card p-8">

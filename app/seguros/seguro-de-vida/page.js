@@ -78,7 +78,7 @@ export default function SeguroDeVidaCoberturasPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-content px-6 pb-24 lg:px-10 lg:pb-[160px]">
+      <section className="mx-auto max-w-content px-6 pb-12 lg:px-10 lg:pb-20">
         <QuoteWidget productLabel="Seguro de Vida" />
       </section>
     </>

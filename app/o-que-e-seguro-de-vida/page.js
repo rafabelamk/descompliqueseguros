@@ -1,5 +1,4 @@
-import ImageHero from "@/components/motion/ImageHero";
-import BlurWords from "@/components/motion/BlurWords";
+import PhotoBanner from "@/components/PhotoBanner";
 import StickyStack from "@/components/motion/StickyStack";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { IconInfo, IconGears, IconDocument, IconCoffee } from "@/components/icons";
@@ -62,15 +61,13 @@ const sections = [
 export default function OQueESeguroDeVidaPage() {
   return (
     <>
-      <ImageHero src={assets.seguroDeVidaHero} alt="Seguro de vida" tone="navy">
-        <BlurWords
-          as="h1"
-          text="O que é seguro de vida"
-          className="mx-auto max-w-xl text-center text-[30px] font-light text-white sm:text-[42px]"
-        />
-      </ImageHero>
+      <PhotoBanner
+        src={assets.seguroDeVidaHero}
+        alt="Seguro de vida"
+        title="O que é seguro de vida"
+      />
 
-      <section className="mx-auto max-w-2xl px-6 py-24 lg:py-[160px]">
+      <section className="mx-auto max-w-2xl px-6 py-12 lg:py-12">
         <StickyStack items={sections} />
 
         <div className="mt-16 flex justify-center">

@@ -1,4 +1,3 @@
-import ImageHero from "@/components/motion/ImageHero";
 import BlurWords from "@/components/motion/BlurWords";
 import MarqueeBand from "@/components/motion/MarqueeBand";
 import TestimonialCarousel from "@/components/motion/TestimonialCarousel";
@@ -27,15 +26,18 @@ const depoimentos = [
 export default function ClientesPage() {
   return (
     <>
-      <ImageHero src={assets.sobreNos[0]} alt="Clientes Descomplique Seguros" tone="deep">
+      <section className="mx-auto max-w-content px-6 pb-2 pt-24 text-center lg:px-10 lg:pt-28">
         <BlurWords
           as="h1"
           text="Clientes"
-          className="text-[32px] font-light text-white sm:text-[48px]"
+          className="text-[32px] font-light text-navy sm:text-[48px]"
         />
-      </ImageHero>
+      </section>
 
-      <section className="mx-auto max-w-content px-6 py-24 lg:px-10 lg:py-[160px]">
+      <section className="mx-auto max-w-content px-6 pb-8 pt-6 lg:px-10">
+        <p className="mb-6 text-center text-[12px] uppercase tracking-[0.1em] text-black/50">
+          Empresas já atendidas
+        </p>
         <ImageStrip
           images={assets.clientes.map((src, i) => ({
             src,
@@ -48,7 +50,7 @@ export default function ClientesPage() {
 
       <MarqueeBand text="DEPOIMENTOS REAIS •" />
 
-      <section className="bg-surface px-6 py-24 lg:px-10 lg:py-[160px]">
+      <section className="bg-surface px-6 py-8 lg:px-10 lg:py-12">
         <div className="mx-auto max-w-content">
           <BlurWords
             as="h2"

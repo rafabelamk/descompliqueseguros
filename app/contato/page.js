@@ -32,7 +32,7 @@ export default function ContatoPage() {
         </p>
       </section>
 
-      <section className="px-6 py-24 lg:px-10 lg:py-[160px]">
+      <section className="px-6 py-12 lg:px-10 lg:py-12">
         <ContactForm />
 
         <div className="mx-auto mt-16 grid max-w-3xl gap-8 border-t border-line pt-10 sm:grid-cols-3">

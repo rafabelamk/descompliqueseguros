@@ -19,7 +19,7 @@ export default function PlanoDeSaudePage() {
         />
       </ImageHero>
 
-      <section className="mx-auto max-w-content px-6 py-24 lg:px-10 lg:py-[160px]">
+      <section className="mx-auto max-w-content px-6 py-12 lg:px-10 lg:py-12">
         <BlurWords
           as="h2"
           text="Algumas das nossas redes credenciadas"
