@@ -1,11 +1,32 @@
 import Image from "next/image";
-import PageHero from "@/components/PageHero";
+import ImageHero from "@/components/motion/ImageHero";
+import BlurWords from "@/components/motion/BlurWords";
+import StickyMVV from "@/components/motion/StickyMVV";
+import CountUp from "@/components/motion/CountUp";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { assets } from "@/lib/assets";
 
 export const metadata = {
   title: "Sobre nós",
 };
+
+const mvvItems = [
+  {
+    label: "Prêmios",
+    photo: assets.sobreNos[0],
+    text: "Qualificada para o Troféu Top Empreendedor, em cerimônia no Tivoli São Paulo Moffarej.",
+  },
+  {
+    label: "Reconhecimento",
+    photo: assets.sobreNos[1],
+    text: "Jose Geiger entre os 50 melhores corretores de seguros do Brasil.",
+  },
+  {
+    label: "Experiência",
+    photo: assets.sobreNos[2],
+    text: "Mais de 20 anos atendendo empresas como Petrobrás e Usina Itaiquara.",
+  },
+];
 
 const highlights = [
   {
@@ -33,32 +54,67 @@ const highlights = [
 export default function SobreNosPage() {
   return (
     <>
-      <PageHero title="Sobre nós" />
+      <ImageHero src={assets.sobreNos[3]} alt="Descomplique Seguros" tone="deep">
+        <BlurWords
+          as="h1"
+          text="Sobre nós"
+          className="text-[32px] font-light text-white sm:text-[48px]"
+        />
+      </ImageHero>
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {assets.sobreNos.map((src, i) => (
-            <div key={src} className="relative aspect-square overflow-hidden">
-              <Image
-                src={src}
-                alt={`Descomplique Seguros — registro ${i + 1}`}
-                fill
-                sizes="(min-width: 640px) 25vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-          ))}
+      <StickyMVV items={mvvItems} />
+
+      <section className="px-6 py-24 lg:px-10 lg:py-[160px]">
+        <div className="mx-auto grid max-w-content grid-cols-3 gap-6 sm:gap-8">
+          <div className="text-center">
+            <p className="text-[44px] text-navy sm:text-[50px]">
+              <CountUp to={30} prefix="+" />
+            </p>
+            <p className="mt-2 text-[12px] uppercase tracking-[0.1em] text-black/50">
+              anos de experiência
+            </p>
+          </div>
+          <div className="text-center">
+            <p className="text-[44px] text-navy sm:text-[50px]">
+              <CountUp to={20} prefix="+" />
+            </p>
+            <p className="mt-2 text-[12px] uppercase tracking-[0.1em] text-black/50">
+              anos no mercado
+            </p>
+          </div>
+          <div className="text-center">
+            <p className="text-[44px] text-navy sm:text-[50px]">
+              Top <CountUp to={50} />
+            </p>
+            <p className="mt-2 text-[12px] uppercase tracking-[0.1em] text-black/50">
+              corretores do Brasil
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 pb-20">
-        <div className="space-y-16">
+      <section className="grid grid-cols-2 gap-4 px-6 pb-10 sm:grid-cols-4 lg:px-10">
+        {assets.sobreNos.map((src, i) => (
+          <div key={src} className="card relative aspect-square overflow-hidden">
+            <Image
+              src={src}
+              alt={`Descomplique Seguros — registro ${i + 1}`}
+              fill
+              sizes="(min-width: 640px) 25vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+        ))}
+      </section>
+
+      <section className="mx-auto max-w-3xl px-6 py-24 lg:py-[160px]">
+        <div className="space-y-20">
           {highlights.map((section) => (
             <div key={section.title}>
-              <h2 className="font-serif text-2xl text-ink">{section.title}</h2>
-              <div className="mt-4 space-y-4">
+              <BlurWords as="h2" text={section.title} className="text-[30px] text-navy" />
+              <div className="mt-5 space-y-4">
                 {section.body.map((paragraph, i) => (
-                  <p key={i} className="text-lg leading-relaxed text-text-muted">
+                  <p key={i} className="text-[18px] font-light leading-relaxed text-black/80">
                     {paragraph}
                   </p>
                 ))}
@@ -67,7 +123,7 @@ export default function SobreNosPage() {
           ))}
         </div>
 
-        <div className="mt-14 border-t border-ink/15 pt-10">
+        <div className="mt-16 border-t border-line pt-10">
           <WhatsAppButton>Solicite uma cotação gratuita aqui</WhatsAppButton>
         </div>
       </section>

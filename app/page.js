@@ -1,94 +1,112 @@
-import Image from "next/image";
-import Link from "next/link";
+import ImageHero from "@/components/motion/ImageHero";
+import BlurWords from "@/components/motion/BlurWords";
+import CountUp from "@/components/motion/CountUp";
+import AccordionCategoria from "@/components/motion/AccordionCategoria";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { areasDeAtuacao } from "@/lib/site";
+import { IconShield, IconHeart, IconCross, IconCoins, IconHeadset } from "@/components/icons";
 import { assets } from "@/lib/assets";
+
+const areas = [
+  {
+    title: "Seguro de vida",
+    icon: <IconHeart />,
+    href: "/o-que-e-seguro-de-vida",
+    cta: "O que é seguro de vida",
+  },
+  {
+    title: "Plano de saúde | Plano de saúde para Pet",
+    icon: <IconCross />,
+    href: "/plano-de-saude",
+    cta: "Ver plano de saúde",
+  },
+  {
+    title: "Seguros em Geral",
+    icon: <IconShield />,
+    href: "/contato",
+    cta: "Solicitar cotação",
+  },
+  {
+    title: "Consórcio",
+    icon: <IconCoins />,
+    href: "/contato",
+    cta: "Solicitar cotação",
+  },
+  {
+    title: "Pós Venda e Suporte Integral",
+    icon: <IconHeadset />,
+    href: "/contato",
+    cta: "Falar com a gente",
+  },
+];
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-ink text-text-inverse">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:py-28">
-          <div>
-            <p className="font-serif text-2xl italic text-gold sm:text-3xl">
-              +30 anos de
-            </p>
-            <h1 className="font-serif text-5xl leading-[1.05] sm:text-6xl">
-              Experiência
-            </h1>
-            <p className="mt-6 max-w-md text-lg text-text-inverse/75">
-              Temos o que você precisa.
-            </p>
-            <div className="mt-9">
-              <WhatsAppButton>Solicitar cotação</WhatsAppButton>
-            </div>
-          </div>
-
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm">
-            <Image
-              src={assets.home.heroPhoto}
-              alt="Descomplique Seguros"
-              fill
-              sizes="(min-width: 1024px) 40vw, 90vw"
-              className="object-cover"
-              priority
-            />
+      <ImageHero src={assets.home.heroPhoto} alt="Descomplique Seguros" tone="navy">
+        <div className="mx-auto max-w-2xl text-center text-white">
+          <BlurWords
+            as="h1"
+            text="+30 anos de experiência. Temos o que você precisa."
+            bold={["+30", "anos", "de", "experiência"]}
+            className="text-[28px] font-light leading-tight sm:text-[36px]"
+          />
+          <div className="mt-9 flex justify-center">
+            <WhatsAppButton>Solicitar cotação</WhatsAppButton>
           </div>
         </div>
-      </section>
+      </ImageHero>
 
-      {/* Áreas de atuação */}
-      <section className="mx-auto max-w-4xl px-6 py-20">
-        <h2 className="font-serif text-3xl text-ink sm:text-4xl">
-          Áreas de atuação
-        </h2>
-        <ul className="mt-10 divide-y divide-ink/15 border-y border-ink/15">
-          {areasDeAtuacao.map((area) => (
-            <li key={area} className="py-5 text-lg text-text sm:text-xl">
-              {area}
-            </li>
-          ))}
-        </ul>
-        <div className="mt-10">
-          <WhatsAppButton variant="outline" className="border-ink text-ink hover:bg-ink hover:text-text-inverse">
-            Solicitar cotação
-          </WhatsAppButton>
+      <section className="mx-auto max-w-content px-6 py-24 lg:px-10 lg:py-[160px]">
+        <div className="mb-10 flex items-center justify-between">
+          <BlurWords
+            as="h2"
+            text="Áreas de atuação"
+            className="text-[30px] text-navy sm:text-[36px]"
+          />
+          <span className="hidden text-[8px] font-medium uppercase tracking-[0.1em] text-black/50 sm:block">
+            5 produtos
+          </span>
         </div>
+
+        <AccordionCategoria
+          icon={<IconShield />}
+          title="Nossas soluções"
+          count={5}
+          defaultOpen
+          items={areas}
+        />
       </section>
 
-      {/* Autoridade em seguros */}
-      <section className="bg-sand">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
-          <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-full lg:mx-0">
-            <Image
-              src={assets.home.autoridadePhoto}
-              alt="Jose Geiger, Diretor-presidente da Descomplique Corretora de Seguros"
-              fill
-              sizes="(min-width: 1024px) 30vw, 60vw"
-              className="object-cover"
-            />
+      <section className="bg-surface px-6 py-24 lg:px-10 lg:py-[160px]">
+        <div className="mx-auto grid max-w-content gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
+          <div>
+            <p className="eyebrow flex items-center gap-2 text-orange">
+              <IconShield />
+              no mercado de seguros
+            </p>
+            <p className="mt-2 text-[50px] leading-none text-navy sm:text-[64px]">
+              <CountUp to={20} prefix="+" />
+            </p>
           </div>
           <div>
-            <h2 className="font-serif text-3xl text-ink sm:text-4xl">
-              Autoridade em seguros
-            </h2>
-            <p className="mt-6 max-w-prose text-lg leading-relaxed text-text-muted">
+            <BlurWords
+              as="h3"
+              text="Autoridade em seguros"
+              className="text-[30px] text-navy sm:text-[36px]"
+            />
+            <p className="mt-6 max-w-2xl text-[18px] font-light leading-relaxed text-black/80">
               Há mais de 20 anos no mercado de seguros atendendo empresas como
               Petrobrás, Jaraguá Equipamentos, Microservice, Usina Itaiquara
               entre outras.
             </p>
-            <p className="mt-4 max-w-prose text-lg leading-relaxed text-text-muted">
+            <p className="mt-4 max-w-2xl text-[18px] font-light leading-relaxed text-black/80">
               O Diretor-presidente da Descomplique Corretora de Seguros, Jose
               Geiger, ficou entre os 50 melhores corretores de seguros do
               Brasil.
             </p>
-            <Link
-              href="/sobre-nos"
-              className="focus-ring mt-6 inline-block border-b border-gold pb-0.5 text-sm font-medium tracking-wide text-ink hover:text-gold"
-            >
+            <a href="/sobre-nos" className="micro-cta mt-6 inline-block text-navy">
               Nossa história
-            </Link>
+            </a>
           </div>
         </div>
       </section>

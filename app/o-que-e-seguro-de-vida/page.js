@@ -1,5 +1,6 @@
-import Image from "next/image";
-import PageHero from "@/components/PageHero";
+import ImageHero from "@/components/motion/ImageHero";
+import BlurWords from "@/components/motion/BlurWords";
+import StickyStack from "@/components/motion/StickyStack";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { assets } from "@/lib/assets";
 
@@ -50,28 +51,18 @@ const sections = [
 export default function OQueESeguroDeVidaPage() {
   return (
     <>
-      <PageHero title="O que é seguro de vida" />
+      <ImageHero src={assets.home.autoridadePhoto} alt="Seguro de vida" tone="navy">
+        <BlurWords
+          as="h1"
+          text="O que é seguro de vida"
+          className="mx-auto max-w-xl text-center text-[30px] font-light text-white sm:text-[42px]"
+        />
+      </ImageHero>
 
-      <section className="mx-auto max-w-3xl divide-y divide-ink/10 px-6 py-16">
-        {sections.map((section) => (
-          <div key={section.title} className="flex gap-6 py-10 first:pt-0 last:pb-0">
-            <div className="relative h-14 w-14 shrink-0">
-              <Image src={section.icon} alt="" fill className="object-contain" />
-            </div>
-            <div>
-              <h2 className="font-serif text-2xl text-ink">{section.title}</h2>
-              <div className="mt-3 space-y-4">
-                {section.body.map((paragraph, i) => (
-                  <p key={i} className="text-lg leading-relaxed text-text-muted">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
+      <section className="mx-auto max-w-2xl px-6 py-24 lg:py-[160px]">
+        <StickyStack items={sections} />
 
-        <div className="pt-10">
+        <div className="mt-16">
           <WhatsAppButton>Solicitar cotação</WhatsAppButton>
         </div>
       </section>

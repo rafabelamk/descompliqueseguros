@@ -6,11 +6,11 @@ export default function WhatsAppButton({
   className = "",
 }) {
   const base =
-    "focus-ring inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-colors";
+    "focus-ring micro-transition inline-flex items-center justify-center rounded-input px-7 py-3.5 text-sm font-medium tracking-wide";
   const styles =
     variant === "solid"
-      ? "bg-gold text-ink hover:bg-gold-soft"
-      : "border border-current text-inherit hover:bg-white/10";
+      ? "bg-navy text-white hover:opacity-90"
+      : "border border-current hover:opacity-70";
 
   return (
     <a

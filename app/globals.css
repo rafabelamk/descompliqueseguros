@@ -7,13 +7,15 @@ html {
 }
 
 body {
-  color: #1b211f;
-  background-color: #ffffff;
+  background: #f2f2ed;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 300;
+  letter-spacing: 0.02em;
 }
 
 ::selection {
-  background-color: #c8a24a;
-  color: #10302b;
+  background-color: #ee7d19;
+  color: #ffffff;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -27,9 +29,66 @@ body {
   }
 }
 
-.focus-ring {
+.focus-ring:focus-visible {
+  outline: 2px solid #ee7d19;
   outline-offset: 3px;
 }
-.focus-ring:focus-visible {
-  outline: 2px solid #c8a24a;
+
+.eyebrow {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.micro-cta {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding-bottom: 6px;
+  border-bottom: 1px solid currentColor;
+  transition: opacity 0.3s ease-in-out;
+}
+.micro-cta:hover {
+  opacity: 0.5;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+.input-field {
+  background: rgba(187, 187, 187, 0.15);
+  border-radius: 10px;
+  border: 0;
+  padding: 14px 16px;
+  font-size: 14px;
+  width: 100%;
+}
+.input-field::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.testimonials-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 12.5%,
+    #000 87.5%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 12.5%,
+    #000 87.5%,
+    transparent 100%
+  );
+}
+
+.micro-transition {
+  transition: transform 0.18s cubic-bezier(0.2, 0, 0, 1), opacity 0.3s ease-in-out;
 }

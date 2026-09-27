@@ -1,5 +1,8 @@
 import Image from "next/image";
-import PageHero from "@/components/PageHero";
+import ImageHero from "@/components/motion/ImageHero";
+import BlurWords from "@/components/motion/BlurWords";
+import MarqueeBand from "@/components/motion/MarqueeBand";
+import TestimonialCarousel from "@/components/motion/TestimonialCarousel";
 import { assets } from "@/lib/assets";
 
 export const metadata = {
@@ -24,9 +27,15 @@ const depoimentos = [
 export default function ClientesPage() {
   return (
     <>
-      <PageHero title="Clientes" />
+      <ImageHero src={assets.clientes[1]} alt="Clientes Descomplique Seguros" tone="deep">
+        <BlurWords
+          as="h1"
+          text="Clientes"
+          className="text-[32px] font-light text-white sm:text-[48px]"
+        />
+      </ImageHero>
 
-      <section className="mx-auto max-w-5xl px-6 py-16">
+      <section className="mx-auto max-w-content px-6 py-24 lg:px-10 lg:py-[160px]">
         <div className="grid grid-cols-2 items-center gap-8 sm:grid-cols-4">
           {assets.clientes.map((src, i) => (
             <div key={src} className="relative aspect-[4/3] grayscale">
@@ -42,20 +51,18 @@ export default function ClientesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 pb-20">
-        <h2 className="font-serif text-2xl text-ink">Depoimentos</h2>
-        <div className="mt-8 space-y-12">
-          {depoimentos.map((d) => (
-            <blockquote key={d.name} className="border-l-2 border-gold pl-6">
-              <p className="font-serif text-xl italic leading-relaxed text-text">
-                “{d.quote}”
-              </p>
-              <footer className="mt-4 text-sm text-text-muted">
-                <span className="font-medium text-text">{d.name}</span>
-                <span className="block">{d.role}</span>
-              </footer>
-            </blockquote>
-          ))}
+      <MarqueeBand text="DEPOIMENTOS REAIS •" />
+
+      <section className="bg-surface px-6 py-24 lg:px-10 lg:py-[160px]">
+        <div className="mx-auto max-w-content">
+          <BlurWords
+            as="h2"
+            text="O que dizem sobre a Descomplique Seguros"
+            className="max-w-xl text-[28px] text-navy sm:text-[32px]"
+          />
+          <div className="mt-14">
+            <TestimonialCarousel items={depoimentos} />
+          </div>
         </div>
       </section>
     </>

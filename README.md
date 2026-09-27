@@ -102,6 +102,41 @@ Como tudo está centralizado nesse arquivo, a troca é rápida.
   e a página inicial (`/`) mostra o conteúdo que antes estava na aba
   "Home".
 
+## Design system (v2 — estilo Grupo Caburé)
+
+O layout foi refeito seguindo `docs/scan-grupo-cabure.md` (tokens de cor,
+tipografia, componentes e motions medidos no site de referência). Resumo
+do que mudou:
+
+- **Cores**: `navy` `#26326C`, `orange` `#EE7D19`, `bg` `#F2F2ED`,
+  `surface` `#FFFFFF`, `line` `#CECECA` — tudo em `tailwind.config.js`.
+- **Fonte**: Inter (eixo óptico `opsz`, pesos 200/300/400/500), no lugar
+  de Newsreader/Manrope.
+- **Framer Motion** foi adicionado (`framer-motion`), com os componentes
+  em `components/motion/`: `BlurWords` (títulos que entram palavra por
+  palavra com blur), `CountUp` (números que contam), `AccordionCategoria`,
+  `StickyMVV` (seção fixa com crossfade de foto — usada em Sobre Nós para
+  Prêmios/Reconhecimento/Experiência), `StickyStack` (cards fixos —
+  usada em O Que É Seguro de Vida), `TestimonialCarousel`,
+  `MarqueeBand` e `ImageHero`.
+- **Header**: fixo, some ao rolar pra baixo e volta ao rolar pra cima,
+  com tema claro (texto branco) nas páginas de hero escuro e tema navy
+  nas demais.
+
+**Duas adaptações conscientes em relação ao site de referência:**
+1. O site original usa **vídeo** de fundo nos heroes. A Descomplique não
+   tem vídeo institucional, então usei as fotos reais do site com um
+   zoom lento contínuo (Ken Burns) no lugar do vídeo.
+2. O card "navy que abre ao clicar" (M4, usado no portfólio de marcas do
+   site de referência) não tinha conteúdo real equivalente pra preencher
+   — a Descomplique não tem marcas irmãs com descrição própria. Em vez
+   de inventar textos, usei esse mesmo espaço (Áreas de Atuação, na Home)
+   com o padrão de **accordion** (M5), que tinha conteúdo real pra
+   sustentar.
+
+Nenhum texto novo foi inventado: todo número, depoimento e parágrafo
+usado é o mesmo migrado do site em Wix.
+
 ## Sobre a versão do Next.js
 
 O projeto usa Next 14.2.35 (a mais recente da série 14). O `npm audit`

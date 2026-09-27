@@ -7,28 +7,28 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: {
-          DEFAULT: "#10302B",
-          deep: "#0A211D",
+        navy: {
+          DEFAULT: "#26326C",
+          deep: "#161B3A",
         },
-        paper: "#FFFFFF",
-        sand: "#F4F3EF",
-        gold: {
-          DEFAULT: "#C8A24A",
-          soft: "#DCC488",
-        },
-        text: {
-          DEFAULT: "#1B211F",
-          inverse: "#F3F1EA",
-          muted: "#4B5450",
-        },
+        orange: "#EE7D19",
+        bg: "#F2F2ED",
+        surface: "#FFFFFF",
+        line: "#CECECA",
       },
       fontFamily: {
-        serif: ["var(--font-newsreader)", "Georgia", "serif"],
-        sans: ["var(--font-manrope)", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+      },
+      borderRadius: {
+        card: "20px",
+        input: "10px",
       },
       maxWidth: {
-        prose: "70ch",
+        content: "1200px",
+      },
+      spacing: {
+        section: "160px",
+        "section-mobile": "96px",
       },
     },
   },

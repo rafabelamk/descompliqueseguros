@@ -1,6 +1,7 @@
-import Image from "next/image";
-import PageHero from "@/components/PageHero";
+import ImageHero from "@/components/motion/ImageHero";
+import BlurWords from "@/components/motion/BlurWords";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import PlanoDeSaudeGrid from "@/components/PlanoDeSaudeGrid";
 import { assets } from "@/lib/assets";
 
 export const metadata = {
@@ -10,27 +11,24 @@ export const metadata = {
 export default function PlanoDeSaudePage() {
   return (
     <>
-      <PageHero title="Plano de saúde" />
+      <ImageHero src={assets.home.heroPhoto} alt="Plano de saúde" tone="orange">
+        <BlurWords
+          as="h1"
+          text="Plano de saúde"
+          className="mx-auto max-w-xl text-center text-[30px] font-light text-white sm:text-[42px]"
+        />
+      </ImageHero>
 
-      <section className="mx-auto max-w-4xl px-6 py-16">
-        <h2 className="font-serif text-2xl text-ink">
-          Algumas das nossas redes credenciadas
-        </h2>
-        <div className="mt-10 grid grid-cols-2 items-center gap-x-8 gap-y-10 sm:grid-cols-3">
-          {assets.planoDeSaude.map((logo, i) => (
-            <div key={i} className="relative aspect-[3/1]">
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                fill
-                sizes="(min-width: 640px) 25vw, 45vw"
-                className="object-contain"
-              />
-            </div>
-          ))}
-        </div>
+      <section className="mx-auto max-w-content px-6 py-24 lg:px-10 lg:py-[160px]">
+        <BlurWords
+          as="h2"
+          text="Algumas das nossas redes credenciadas"
+          className="text-[24px] text-navy sm:text-[30px]"
+        />
 
-        <div className="mt-14">
+        <PlanoDeSaudeGrid logos={assets.planoDeSaude} />
+
+        <div className="mt-16">
           <WhatsAppButton>Solicitar cotação</WhatsAppButton>
         </div>
       </section>
