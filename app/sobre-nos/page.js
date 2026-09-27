@@ -1,5 +1,5 @@
 import Image from "next/image";
-import PhotoBanner from "@/components/PhotoBanner";
+import BlurWords from "@/components/motion/BlurWords";
 import CountUp from "@/components/motion/CountUp";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { IconTrophy, IconMedal, IconTrendUp } from "@/components/icons";
@@ -11,19 +11,18 @@ export const metadata = {
 
 const highlights = [
   {
-    title: "Prêmios",
-    icon: <IconTrophy />,
-    body: [
-      "A Descomplique Corretora de Seguros foi qualificada para receber o Troféu Top Empreendedor, uma das mais importantes homenagens empresariais, em cerimônia realizada no Tivoli São Paulo Moffarej.",
-      "Com presença de autoridades brasileiras, personalidades, na ocasião, a Revista Top of Business publicou matéria de uma página sobre a Descomplique Corretora de Seguros na Revista Top Of Business em sua edição especial.",
-      "Uma homenagem da Revista Top of Business às empresas brasileiras que contribuíram para o desenvolvimento do país. Este reconhecimento, merecido e até esperado pelas empresas e profissionais, deve-se à constante luta para permanecer no mercado tão competitivo, seja no segmento comercial, industrial, de prestação de serviços, profissionais liberais, inclusive jornalístico. Atenta ao que ocorre no mundo business, a Diretoria da Revista Top of Business selecionou os homenageados seguindo os seguintes critérios: participação em feiras nacionais e internacionais, congressos, desenvolvimento de produtos inovadores, tradição no mercado, prêmios recebidos, responsabilidade social e certificados de qualidades adquiridos no decorrer de sua existência.",
-    ],
-  },
-  {
     title: "Reconhecimento",
     icon: <IconMedal />,
     body: [
       "O Diretor-presidente da Descomplique Corretora de Seguros, Jose Geiger, ficou entre os 50 melhores corretores de seguros do Brasil. A premiação ocorreu no evento Campeões de Vendas SulAmérica no Club Med Rio.",
+    ],
+  },
+  {
+    title: "Prêmios",
+    icon: <IconTrophy />,
+    body: [
+      "A Descomplique Corretora de Seguros foi qualificada para o Troféu Top Empreendedor, em cerimônia no Tivoli São Paulo Moffarej, e teve uma página dedicada a ela na Revista Top of Business, em edição especial com presença de autoridades e personalidades brasileiras.",
+      "O prêmio reconhece empresas que se destacam por tradição no mercado, inovação e responsabilidade social.",
     ],
   },
   {
@@ -38,7 +37,13 @@ const highlights = [
 export default function SobreNosPage() {
   return (
     <>
-      <PhotoBanner src={assets.sobreNos[3]} alt="Descomplique Seguros" title="Sobre nós" />
+      <section className="mx-auto max-w-content px-6 pb-4 pt-24 text-center lg:px-10 lg:pt-28">
+        <BlurWords
+          as="h1"
+          text="Sobre nós"
+          className="text-[32px] font-light text-navy sm:text-[48px]"
+        />
+      </section>
 
       <section className="mx-auto max-w-content px-6 pb-10 pt-16 lg:px-10">
         <div className="grid grid-cols-2 overflow-hidden rounded-card sm:grid-cols-4">
@@ -56,29 +61,29 @@ export default function SobreNosPage() {
         </div>
       </section>
 
-      <section className="px-6 py-24 lg:px-10 lg:py-[160px]">
-        <div className="mx-auto grid max-w-content grid-cols-3 gap-6 sm:gap-8">
-          <div className="text-center">
-            <p className="text-[44px] text-navy sm:text-[50px]">
+      <section className="px-6 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-content grid-cols-3 gap-4 sm:gap-6">
+          <div className="card flex flex-col items-center justify-center p-6 text-center sm:p-8">
+            <p className="text-[36px] text-navy sm:text-[50px]">
               <CountUp to={30} prefix="+" />
             </p>
-            <p className="mt-2 text-[12px] uppercase tracking-[0.1em] text-black/50">
+            <p className="mt-2 text-[10px] uppercase tracking-[0.1em] text-black/50 sm:text-[12px]">
               anos de experiência
             </p>
           </div>
-          <div className="text-center">
-            <p className="text-[44px] text-navy sm:text-[50px]">
+          <div className="card flex flex-col items-center justify-center p-6 text-center sm:p-8">
+            <p className="text-[36px] text-navy sm:text-[50px]">
               <CountUp to={20} prefix="+" />
             </p>
-            <p className="mt-2 text-[12px] uppercase tracking-[0.1em] text-black/50">
+            <p className="mt-2 text-[10px] uppercase tracking-[0.1em] text-black/50 sm:text-[12px]">
               anos no mercado
             </p>
           </div>
-          <div className="text-center">
-            <p className="text-[44px] text-navy sm:text-[50px]">
+          <div className="card flex flex-col items-center justify-center p-6 text-center sm:p-8">
+            <p className="text-[36px] text-navy sm:text-[50px]">
               Top <CountUp to={50} />
             </p>
-            <p className="mt-2 text-[12px] uppercase tracking-[0.1em] text-black/50">
+            <p className="mt-2 text-[10px] uppercase tracking-[0.1em] text-black/50 sm:text-[12px]">
               corretores do Brasil
             </p>
           </div>
@@ -104,7 +109,7 @@ export default function SobreNosPage() {
           ))}
         </div>
 
-        <div className="mt-16 border-t border-line pt-10">
+        <div className="mt-16 flex justify-center border-t border-line pt-10">
           <WhatsAppButton>Solicite uma cotação gratuita aqui</WhatsAppButton>
         </div>
       </section>

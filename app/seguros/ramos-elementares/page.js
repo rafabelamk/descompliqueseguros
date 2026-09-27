@@ -1,8 +1,8 @@
-import ImageHero from "@/components/motion/ImageHero";
 import BlurWords from "@/components/motion/BlurWords";
+import ProductIntro from "@/components/ProductIntro";
 import CoberturasGrid from "@/components/CoberturasGrid";
 import QuoteWidget from "@/components/QuoteWidget";
-import { IconShield, IconDocument, IconGears, IconCoins } from "@/components/icons";
+import { IconInfo, IconCross, IconGears, IconShield, IconDocument, IconCoins } from "@/components/icons";
 import { assets } from "@/lib/assets";
 
 export const metadata = {
@@ -12,39 +12,52 @@ export const metadata = {
 // Coberturas confirmadas com o cliente (Jose Geiger).
 const coberturas = [
   {
-    icon: <IconShield />,
-    title: "Residencial",
-    description: "Proteção para sua casa contra incêndio, roubo e danos elétricos.",
+    icon: <IconInfo />,
+    title: "Personalize na cotação",
+    description:
+      "Adicione outras coberturas e assistências durante a cotação e pague pelo que faz sentido para o seu momento de vida.",
   },
   {
-    icon: <IconDocument />,
-    title: "Empresarial",
-    description: "Cobertura para escritórios, comércios e o patrimônio do seu negócio.",
+    icon: <IconCross />,
+    title: "Incêndio, raio e explosão",
+    description:
+      "Proteção essencial para danos estruturais causados por fogo, raios ou explosões acidentais.",
   },
   {
     icon: <IconGears />,
-    title: "Condomínio",
-    description: "Proteção para áreas comuns e responsabilidade civil do condomínio.",
+    title: "Vendaval e granizo",
+    description:
+      "Cobertura para eventos climáticos extremos que danificam telhados, janelas e estruturas.",
+  },
+  {
+    icon: <IconShield />,
+    title: "Fumaça e danos elétricos",
+    description: "Proteção contra curto-circuito e prejuízos causados por fumaça.",
+  },
+  {
+    icon: <IconDocument />,
+    title: "Perda ou pagamento de aluguel",
+    description:
+      "Garante indenização caso o imóvel fique inabitável ou precise ser desocupado após um sinistro.",
   },
   {
     icon: <IconCoins />,
-    title: "Equipamentos e outros bens",
-    description: "Cobertura para máquinas, embarcações e outros bens importantes.",
+    title: "Hospedagem e mudança",
+    description: "Cobre despesas emergenciais com estadia ou transporte de bens em caso de sinistro.",
   },
 ];
 
 export default function RamosElementaresPage() {
   return (
     <>
-      <ImageHero src={assets.home.heroPhoto} alt="Ramos Elementares" tone="navy">
-        <BlurWords
-          as="h1"
-          text="Ramos Elementares"
-          className="text-[30px] font-light text-white sm:text-[42px]"
-        />
-      </ImageHero>
+      <ProductIntro
+        eyebrow="Ramos Elementares"
+        title="Proteja o que você construiu, com segurança de verdade."
+        subhead="Cobertura sob medida para residências, comércios e empresas, contra imprevistos que geram grandes prejuízos."
+        photo={assets.home.heroPhoto}
+      />
 
-      <section className="mx-auto max-w-content px-6 py-16 lg:px-10">
+      <section id="cotacao" className="mx-auto max-w-content px-6 py-16 lg:px-10">
         <BlurWords as="h2" text="Coberturas" className="text-center text-[28px] text-navy" />
         <div className="mt-12">
           <CoberturasGrid items={coberturas} />

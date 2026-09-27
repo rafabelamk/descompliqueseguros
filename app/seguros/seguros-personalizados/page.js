@@ -1,5 +1,5 @@
-import ImageHero from "@/components/motion/ImageHero";
 import BlurWords from "@/components/motion/BlurWords";
+import ProductIntro from "@/components/ProductIntro";
 import CoberturasGrid from "@/components/CoberturasGrid";
 import QuoteWidget from "@/components/QuoteWidget";
 import { IconInfo, IconGears, IconShield } from "@/components/icons";
@@ -30,20 +30,15 @@ const coberturas = [
 export default function SegurosPersonalizadosPage() {
   return (
     <>
-      <ImageHero src={assets.home.heroPhoto} alt="Seguros Personalizados" tone="navy">
-        <BlurWords
-          as="h1"
-          text="Seguros Personalizados"
-          className="text-[30px] font-light text-white sm:text-[42px]"
-        />
-      </ImageHero>
+      <ProductIntro
+        eyebrow="Seguros Personalizados"
+        title="Amplie sua proteção com garantias que fazem a diferença."
+        subhead="Seguros personalizados de acordo com a sua necessidade, variando coberturas e assistências."
+        photo={assets.home.heroPhoto}
+      />
 
-      <section className="mx-auto max-w-content px-6 py-16 lg:px-10">
-        <BlurWords
-          as="h2"
-          text="Seguros customizados para cada pessoa, variando coberturas e assistências de acordo com a sua necessidade."
-          className="mx-auto max-w-2xl text-center text-[22px] text-navy sm:text-[26px]"
-        />
+      <section id="cotacao" className="mx-auto max-w-content px-6 py-16 lg:px-10">
+        <BlurWords as="h2" text="Coberturas" className="text-center text-[28px] text-navy" />
         <div className="mt-12">
           <CoberturasGrid items={coberturas} />
         </div>

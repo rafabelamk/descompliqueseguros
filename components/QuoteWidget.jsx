@@ -91,7 +91,7 @@ export default function QuoteWidget({ productLabel }) {
         </div>
         <button
           type="submit"
-          className="focus-ring micro-transition w-full rounded-input bg-navy py-3.5 text-sm font-medium text-white hover:opacity-90"
+          className="focus-ring micro-transition w-full rounded-input bg-orange py-4 text-base font-medium text-white hover:opacity-90"
         >
           Cotar agora
         </button>

@@ -1,5 +1,5 @@
-import ImageHero from "@/components/motion/ImageHero";
 import BlurWords from "@/components/motion/BlurWords";
+import ProductIntro from "@/components/ProductIntro";
 import CoberturasGrid from "@/components/CoberturasGrid";
 import QuoteWidget from "@/components/QuoteWidget";
 import { IconShield, IconInfo, IconHeart, IconCross } from "@/components/icons";
@@ -64,15 +64,14 @@ const coberturas = [
 export default function SeguroDeVidaCoberturasPage() {
   return (
     <>
-      <ImageHero src={assets.seguroDeVidaHero} alt="Seguro de vida" tone="navy">
-        <BlurWords
-          as="h1"
-          text="Seguro de vida"
-          className="text-[30px] font-light text-white sm:text-[42px]"
-        />
-      </ImageHero>
+      <ProductIntro
+        eyebrow="Seguro de vida"
+        title="Uma proteção que atravessa gerações."
+        subhead="Cobertura contra morte natural, acidentes e invalidez, com assistência real nos momentos mais difíceis."
+        photo={assets.seguroDeVidaHero}
+      />
 
-      <section className="mx-auto max-w-content px-6 py-16 lg:px-10">
+      <section id="cotacao" className="mx-auto max-w-content px-6 py-16 lg:px-10">
         <BlurWords as="h2" text="Coberturas" className="text-center text-[28px] text-navy" />
         <div className="mt-12">
           <CoberturasGrid items={coberturas} />

@@ -73,7 +73,7 @@ export default function OQueESeguroDeVidaPage() {
       <section className="mx-auto max-w-2xl px-6 py-24 lg:py-[160px]">
         <StickyStack items={sections} />
 
-        <div className="mt-16">
+        <div className="mt-16 flex justify-center">
           <WhatsAppButton>Solicitar cotação</WhatsAppButton>
         </div>
       </section>
