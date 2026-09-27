@@ -121,3 +121,34 @@ export function IconLinkedIn(props) {
     </svg>
   );
 }
+
+// Ícones institucionais (traço único, mesmo tom corporativo), usados em
+// vez de emoji em títulos de destaque.
+export function IconTrophy(props) {
+  return (
+    <svg {...base} width={26} height={26} {...props}>
+      <path d="M7 4h10v4a5 5 0 0 1-5 5 5 5 0 0 1-5-5V4z" />
+      <path d="M7 5H4v1.5A3.5 3.5 0 0 0 7.5 10M17 5h3v1.5A3.5 3.5 0 0 1 16.5 10" />
+      <path d="M12 13v3M9 20h6M9.5 20c0-1.8.7-3 2.5-4 1.8 1 2.5 2.2 2.5 4" />
+    </svg>
+  );
+}
+
+export function IconMedal(props) {
+  return (
+    <svg {...base} width={26} height={26} {...props}>
+      <path d="M8 3l2.5 6M16 3l-2.5 6" />
+      <circle cx="12" cy="14.5" r="6.5" />
+      <path d="M12 11.2l1 2.1 2.3.3-1.7 1.6.4 2.3-2-1.1-2 1.1.4-2.3-1.7-1.6 2.3-.3z" />
+    </svg>
+  );
+}
+
+export function IconTrendUp(props) {
+  return (
+    <svg {...base} width={26} height={26} {...props}>
+      <path d="M3 17l6-6 4 4 8-9" />
+      <path d="M21 3h-5.5M21 3v5.5" />
+    </svg>
+  );
+}

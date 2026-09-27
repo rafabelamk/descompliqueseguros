@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className="bg-bg px-6 pb-10 pt-20 text-navy lg:px-10">
       <div className="mx-auto max-w-content">
         <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
-          <Image src={assets.logo} alt={site.name} width={140} height={80} className="h-12 w-auto" />
+          <Image src={assets.logo} alt={site.name} width={200} height={114} className="h-20 w-auto" />
 
           <a
             href={contact.whatsappUrl}
