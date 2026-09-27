@@ -1,7 +1,7 @@
 export default function TestimonialCarousel({ items }) {
   return (
     <div className="testimonials-mask overflow-x-auto">
-      <div className="flex w-max gap-0">
+      <div className="flex w-max gap-0 mx-auto">
         {items.map((item, i) => (
           <div
             key={item.name}

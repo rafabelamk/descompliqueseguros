@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { contact, nav, site } from "@/lib/site";
 import { assets } from "@/lib/assets";
+import { IconFacebook, IconInstagram, IconLinkedIn } from "@/components/icons";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -71,11 +72,32 @@ export default function Footer() {
               Redes sociais
             </p>
             <div className="mt-4 flex gap-4">
-              <a href={contact.facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="focus-ring micro-transition hover:opacity-70">
-                <Image src={assets.social.facebookIcon} alt="Facebook" width={32} height={32} className="h-8 w-8 rounded-full" />
+              <a
+                href={contact.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="focus-ring micro-transition text-navy hover:opacity-70"
+              >
+                <IconFacebook width={22} height={22} />
               </a>
-              <a href={contact.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="focus-ring micro-transition hover:opacity-70">
-                <Image src={assets.social.instagramIcon} alt="Instagram" width={32} height={32} className="h-8 w-8 rounded-full" />
+              <a
+                href={contact.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="focus-ring micro-transition text-navy hover:opacity-70"
+              >
+                <IconInstagram width={22} height={22} />
+              </a>
+              <a
+                href={contact.linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="focus-ring micro-transition text-navy hover:opacity-70"
+              >
+                <IconLinkedIn width={22} height={22} />
               </a>
             </div>
           </div>

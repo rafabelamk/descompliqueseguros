@@ -2,19 +2,16 @@ import ImageHero from "@/components/motion/ImageHero";
 import BlurWords from "@/components/motion/BlurWords";
 import StickyStack from "@/components/motion/StickyStack";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { IconInfo, IconGears, IconDocument, IconCoffee } from "@/components/icons";
 import { assets } from "@/lib/assets";
 
 export const metadata = {
   title: "O que é seguro de vida",
 };
 
-// NOTA: no site original em Wix, os parágrafos de "Como funciona" e
-// "Como contrato" já vinham com o mesmo texto (aparenta ser um erro de
-// preenchimento do próprio site antigo). Foram migrados fielmente aqui,
-// mas vale revisar o texto de "Como contrato" com o cliente.
 const sections = [
   {
-    icon: assets.seguroDeVida.oQueE,
+    icon: <IconInfo />,
     title: "O que é",
     body: [
       "Seguro de vida é sinônimo de proteção financeira. Imagine se você não tivesse nenhuma renda hoje — qual seria o impacto na sua vida e na de seus familiares?",
@@ -27,7 +24,7 @@ const sections = [
     ],
   },
   {
-    icon: assets.seguroDeVida.comoFunciona,
+    icon: <IconGears />,
     title: "Como funciona",
     body: ["É simples. Veja o passo a passo caso o imprevisto coberto pelo seguro aconteça:"],
     bullets: [
@@ -38,7 +35,7 @@ const sections = [
     ],
   },
   {
-    icon: assets.seguroDeVida.comoContrato,
+    icon: <IconDocument />,
     title: "Como contrato",
     body: ["Caso o imprevisto coberto pelo seguro aconteça, o processo de acionamento é:"],
     bullets: [
@@ -49,7 +46,7 @@ const sections = [
     ],
   },
   {
-    icon: assets.seguroDeVida.precoDeUmCafe,
+    icon: <IconCoffee />,
     title: "Preço de um café",
     body: [
       "Muita gente pensa que um seguro de vida é caro — mas o custo varia bastante conforme o seu perfil.",
@@ -65,7 +62,7 @@ const sections = [
 export default function OQueESeguroDeVidaPage() {
   return (
     <>
-      <ImageHero src={assets.sobreNos[2]} alt="Seguro de vida" tone="navy">
+      <ImageHero src={assets.seguroDeVidaHero} alt="Seguro de vida" tone="navy">
         <BlurWords
           as="h1"
           text="O que é seguro de vida"

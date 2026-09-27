@@ -16,8 +16,8 @@ export default function ImageHero({ src, alt, tone = "navy", children }) {
       : "bg-navy-deep/70";
 
   return (
-    <section className="mx-auto max-w-content px-6 pb-16 pt-28 lg:px-10 lg:pt-36">
-      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-card sm:aspect-[21/9]">
+    <section className="mx-auto max-w-content px-6 pb-8 pt-24 lg:px-10 lg:pt-28">
+      <div className="relative h-[50vh] max-h-[420px] min-h-[260px] w-full overflow-hidden rounded-card">
         <motion.div
           className="absolute inset-0"
           initial={{ scale: 1 }}

@@ -1,7 +1,7 @@
 import ImageHero from "@/components/motion/ImageHero";
 import BlurWords from "@/components/motion/BlurWords";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import PlanoDeSaudeGrid from "@/components/PlanoDeSaudeGrid";
+import ImageStrip from "@/components/ImageStrip";
 import { assets } from "@/lib/assets";
 
 export const metadata = {
@@ -23,12 +23,14 @@ export default function PlanoDeSaudePage() {
         <BlurWords
           as="h2"
           text="Algumas das nossas redes credenciadas"
-          className="text-[24px] text-navy sm:text-[30px]"
+          className="text-center text-[24px] text-navy sm:text-[30px]"
         />
 
-        <PlanoDeSaudeGrid logos={assets.planoDeSaude} />
+        <div className="mt-14">
+          <ImageStrip images={assets.planoDeSaude.map((l) => ({ src: l.src, alt: l.alt }))} height={96} />
+        </div>
 
-        <div className="mt-16">
+        <div className="mt-16 flex justify-center">
           <WhatsAppButton>Solicitar cotação</WhatsAppButton>
         </div>
       </section>

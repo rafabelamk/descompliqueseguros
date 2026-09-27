@@ -91,3 +91,33 @@ export function IconCoffee(props) {
     </svg>
   );
 }
+
+// Ícones de redes sociais — traço único, monocromático (cor herdada via
+// currentColor), pra usar sempre na mesma cor e tamanho no rodapé.
+export function IconFacebook(props) {
+  return (
+    <svg {...base} width={22} height={22} {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13.5 21v-6.5h2.2l.3-2.6h-2.5V10.2c0-.75.2-1.26 1.28-1.26H16V6.66c-.22-.03-1-.1-1.9-.1-1.87 0-3.15 1.14-3.15 3.24v1.8H8.7v2.6h2.25V21" />
+    </svg>
+  );
+}
+
+export function IconInstagram(props) {
+  return (
+    <svg {...base} width={22} height={22} {...props}>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <path d="M16.8 7.2v.01" />
+    </svg>
+  );
+}
+
+export function IconLinkedIn(props) {
+  return (
+    <svg {...base} width={22} height={22} {...props}>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="3" />
+      <path d="M8 10.5V16M8 7.8v.01M12 16v-3.3c0-1.5.9-2.4 2.1-2.4 1.1 0 1.9.8 1.9 2.4V16" />
+    </svg>
+  );
+}

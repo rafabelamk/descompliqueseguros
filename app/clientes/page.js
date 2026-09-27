@@ -1,8 +1,8 @@
-import Image from "next/image";
 import ImageHero from "@/components/motion/ImageHero";
 import BlurWords from "@/components/motion/BlurWords";
 import MarqueeBand from "@/components/motion/MarqueeBand";
 import TestimonialCarousel from "@/components/motion/TestimonialCarousel";
+import ImageStrip from "@/components/ImageStrip";
 import { assets } from "@/lib/assets";
 
 export const metadata = {
@@ -36,19 +36,14 @@ export default function ClientesPage() {
       </ImageHero>
 
       <section className="mx-auto max-w-content px-6 py-24 lg:px-10 lg:py-[160px]">
-        <div className="grid grid-cols-2 items-center gap-8 sm:grid-cols-4">
-          {assets.clientes.map((src, i) => (
-            <div key={src} className="relative aspect-[4/3] grayscale">
-              <Image
-                src={src}
-                alt={`Cliente atendido ${i + 1}`}
-                fill
-                sizes="(min-width: 640px) 20vw, 45vw"
-                className="object-contain"
-              />
-            </div>
-          ))}
-        </div>
+        <ImageStrip
+          images={assets.clientes.map((src, i) => ({
+            src,
+            alt: `Cliente atendido ${i + 1}`,
+          }))}
+          height={96}
+          grayscale
+        />
       </section>
 
       <MarqueeBand text="DEPOIMENTOS REAIS •" />
@@ -58,7 +53,7 @@ export default function ClientesPage() {
           <BlurWords
             as="h2"
             text="O que dizem sobre a Descomplique Seguros"
-            className="max-w-xl text-[28px] text-navy sm:text-[32px]"
+            className="mx-auto max-w-xl text-center text-[28px] text-navy sm:text-[32px]"
           />
           <div className="mt-14">
             <TestimonialCarousel items={depoimentos} />

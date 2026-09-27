@@ -12,10 +12,10 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 h-16 border-b border-line/60 bg-bg/90 text-navy backdrop-blur-[20px]">
+    <header className="fixed inset-x-0 top-0 z-50 h-16 border-b border-line/60 bg-bg/90 text-navy backdrop-blur-[20px] sm:h-20">
       <div className="mx-auto flex h-full max-w-content items-center justify-between px-6 lg:px-10">
         <Link href="/" className="focus-ring flex items-center gap-2">
-          <Image src={assets.logo} alt={site.name} width={120} height={68} className="h-9 w-auto" priority />
+          <Image src={assets.logo} alt={site.name} width={160} height={91} className="h-12 w-auto sm:h-14" priority />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">

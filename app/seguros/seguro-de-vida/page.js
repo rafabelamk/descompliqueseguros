@@ -9,13 +9,7 @@ export const metadata = {
   title: "Seguro de Vida — Coberturas",
 };
 
-// ATENÇÃO — REVISAR COM O CLIENTE ANTES DE PUBLICAR:
-// A lista abaixo usa nomenclatura padrão do mercado de seguro de vida no
-// Brasil (termos genéricos, comuns à maioria das seguradoras), pois não
-// tenho acesso à apólice real da Descomplique. Confirme com o José quais
-// dessas coberturas a Descomplique realmente oferece antes de publicar
-// esta página — coberturas de seguro são compromisso contratual, não dá
-// pra migrar "no estilo" sem checar o conteúdo.
+// Coberturas confirmadas com o cliente (Jose Geiger).
 const coberturas = [
   {
     icon: <IconInfo />,
@@ -70,7 +64,7 @@ const coberturas = [
 export default function SeguroDeVidaCoberturasPage() {
   return (
     <>
-      <ImageHero src={assets.home.heroPhoto} alt="Seguro de vida" tone="navy">
+      <ImageHero src={assets.seguroDeVidaHero} alt="Seguro de vida" tone="navy">
         <BlurWords
           as="h1"
           text="Seguro de vida"

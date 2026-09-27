@@ -93,18 +93,20 @@ export default function SobreNosPage() {
         </div>
       </section>
 
-      <section className="grid grid-cols-2 gap-4 px-6 pb-10 sm:grid-cols-4 lg:px-10">
-        {assets.sobreNos.map((src, i) => (
-          <div key={src} className="card relative aspect-square overflow-hidden">
-            <Image
-              src={src}
-              alt={`Descomplique Seguros — registro ${i + 1}`}
-              fill
-              sizes="(min-width: 640px) 25vw, 50vw"
-              className="object-cover"
-            />
-          </div>
-        ))}
+      <section className="mx-auto max-w-content px-6 pb-10 lg:px-10">
+        <div className="grid grid-cols-2 overflow-hidden rounded-card sm:grid-cols-4">
+          {assets.sobreNos.map((src, i) => (
+            <div key={src} className="relative aspect-[3/4]">
+              <Image
+                src={src}
+                alt={`Descomplique Seguros — registro ${i + 1}`}
+                fill
+                sizes="(min-width: 640px) 25vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="mx-auto max-w-3xl px-6 py-24 lg:py-[160px]">

@@ -1,8 +1,10 @@
+import Image from "next/image";
 import ImageHero from "@/components/motion/ImageHero";
 import BlurWords from "@/components/motion/BlurWords";
 import CountUp from "@/components/motion/CountUp";
 import AccordionCategoria from "@/components/motion/AccordionCategoria";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ImageStrip from "@/components/ImageStrip";
 import { IconShield, IconHeart, IconCross, IconCoins, IconHeadset } from "@/components/icons";
 import { assets } from "@/lib/assets";
 
@@ -22,8 +24,8 @@ const areas = [
   {
     title: "Seguros em Geral",
     icon: <IconShield />,
-    href: "/contato",
-    cta: "Solicitar cotação",
+    href: "/seguros/ramos-elementares",
+    cta: "Ver coberturas",
   },
   {
     title: "Consórcio",
@@ -78,15 +80,23 @@ export default function HomePage() {
       </section>
 
       <section className="bg-surface px-6 py-24 lg:px-10 lg:py-[160px]">
-        <div className="mx-auto grid max-w-content gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
-          <div>
-            <p className="eyebrow flex items-center gap-2 text-orange">
-              <IconShield />
-              no mercado de seguros
-            </p>
-            <p className="mt-2 text-[50px] leading-none text-navy sm:text-[64px]">
-              <CountUp to={20} prefix="+" />
-            </p>
+        <div className="mx-auto grid max-w-content items-center gap-14 lg:grid-cols-2">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-card">
+            <Image
+              src={assets.sobreNos[0]}
+              alt="Jose Geiger — Descomplique Seguros"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
+            <div className="absolute bottom-4 left-4 rounded-input bg-navy px-4 py-2 text-white">
+              <span className="text-2xl leading-none">
+                <CountUp to={20} prefix="+" />
+              </span>
+              <span className="ml-2 text-[10px] uppercase tracking-[0.1em] text-white/70">
+                anos no mercado
+              </span>
+            </div>
           </div>
           <div>
             <BlurWords
@@ -108,6 +118,17 @@ export default function HomePage() {
               Nossa história
             </a>
           </div>
+        </div>
+
+        <div className="mx-auto mt-16 max-w-content">
+          <ImageStrip
+            images={assets.clientes.map((src, i) => ({
+              src,
+              alt: `Cliente atendido ${i + 1}`,
+            }))}
+            height={72}
+            grayscale
+          />
         </div>
       </section>
     </>

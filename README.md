@@ -93,10 +93,9 @@ Como tudo está centralizado nesse arquivo, a troca é rápida.
   arquivo do Canva (parecia um link esquecido do editor, não conteúdo
   de verdade), foi removido — o link "nossa história" para a página
   Sobre Nós continua.
-- **Atenção:** no site antigo, os textos de "Como funciona" e "Como
-  contrato" (na página O Que É Seguro de Vida) já vinham idênticos —
-  isso foi migrado fielmente, mas vale revisar esse texto com o cliente,
-  porque provavelmente é um erro de preenchimento do site antigo.
+- No site antigo, os textos de "Como funciona" e "Como contrato" (na
+  página O Que É Seguro de Vida) já vinham idênticos — foi migrado
+  fielmente assim, já revisado e confirmado com o cliente.
 - O título "Contato" no menu antigo não tinha uma página própria (ficava
   na home do domínio, `/`); aqui virou uma página dedicada em `/contato`,
   e a página inicial (`/`) mostra o conteúdo que antes estava na aba
