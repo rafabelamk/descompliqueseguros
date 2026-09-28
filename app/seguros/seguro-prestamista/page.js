@@ -47,6 +47,7 @@ export default function SeguroPrestamistaPage() {
     <>
       <ProductIntro
         eyebrow="Seguro Prestamista"
+        ctaLabel="Quero proteger meu negócio hoje"
         title="Sua operação protegida, seu cliente amparado."
         subhead="Se o imprevisto acontecer com o segurado, a dívida é quitada — sem impacto na sua operação nem inadimplência."
         photo={assets.home.heroPhoto}
@@ -60,7 +61,7 @@ export default function SeguroPrestamistaPage() {
       </section>
 
       <section className="mx-auto max-w-content px-6 pb-12 lg:px-10 lg:pb-20">
-        <QuoteWidget productLabel="Seguro Prestamista" />
+        <QuoteWidget productLabel="Seguro Prestamista" ctaLabel="Quero proteger meu negócio hoje" />
       </section>
     </>
   );

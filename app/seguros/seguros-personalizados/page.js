@@ -32,6 +32,7 @@ export default function SegurosPersonalizadosPage() {
     <>
       <ProductIntro
         eyebrow="Seguros Personalizados"
+        ctaLabel="Quero minha proteção sob medida"
         title="Amplie sua proteção com garantias que fazem a diferença."
         subhead="Seguros personalizados de acordo com a sua necessidade, variando coberturas e assistências."
         photo={assets.home.heroPhoto}
@@ -45,7 +46,7 @@ export default function SegurosPersonalizadosPage() {
       </section>
 
       <section className="mx-auto max-w-content px-6 pb-12 lg:px-10 lg:pb-20">
-        <QuoteWidget productLabel="Seguros Personalizados" />
+        <QuoteWidget productLabel="Seguros Personalizados" ctaLabel="Quero minha proteção sob medida" />
       </section>
     </>
   );

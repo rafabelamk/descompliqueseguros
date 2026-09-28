@@ -1,6 +1,6 @@
 import PhotoBanner from "@/components/PhotoBanner";
 import StickyStack from "@/components/motion/StickyStack";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import QuoteWidget from "@/components/QuoteWidget";
 import { IconInfo, IconGears, IconDocument, IconCoffee } from "@/components/icons";
 import { assets } from "@/lib/assets";
 
@@ -69,10 +69,10 @@ export default function OQueESeguroDeVidaPage() {
 
       <section className="mx-auto max-w-2xl px-6 py-12 lg:py-12">
         <StickyStack items={sections} />
+      </section>
 
-        <div className="mt-16 flex justify-center">
-          <WhatsAppButton>Solicitar cotação</WhatsAppButton>
-        </div>
+      <section className="mx-auto max-w-content px-6 pb-12 lg:px-10 lg:pb-16">
+        <QuoteWidget productLabel="Seguro de Vida" ctaLabel="Quero me proteger hoje" />
       </section>
     </>
   );

@@ -52,6 +52,7 @@ export default function RamosElementaresPage() {
     <>
       <ProductIntro
         eyebrow="Ramos Elementares"
+        ctaLabel="Quero proteger meu patrimônio hoje"
         title="Proteja o que você construiu, com segurança de verdade."
         subhead="Cobertura sob medida para residências, comércios e empresas, contra imprevistos que geram grandes prejuízos."
         photo={assets.home.heroPhoto}
@@ -65,7 +66,7 @@ export default function RamosElementaresPage() {
       </section>
 
       <section className="mx-auto max-w-content px-6 pb-12 lg:px-10 lg:pb-20">
-        <QuoteWidget productLabel="Ramos Elementares" />
+        <QuoteWidget productLabel="Ramos Elementares" ctaLabel="Quero proteger meu patrimônio hoje" />
       </section>
     </>
   );

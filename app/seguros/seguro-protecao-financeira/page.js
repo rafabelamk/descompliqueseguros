@@ -52,6 +52,7 @@ export default function SeguroProtecaoFinanceiraPage() {
     <>
       <ProductIntro
         eyebrow="Seguro Proteção Financeira"
+        ctaLabel="Quero proteger minha renda hoje"
         title="Tranquilidade para continuar pagando, mesmo nos imprevistos."
         subhead="Em caso de desemprego, incapacidade ou falecimento, a dívida ou fatura é quitada com segurança e agilidade."
         photo={assets.home.heroPhoto}
@@ -65,7 +66,7 @@ export default function SeguroProtecaoFinanceiraPage() {
       </section>
 
       <section className="mx-auto max-w-content px-6 pb-12 lg:px-10 lg:pb-20">
-        <QuoteWidget productLabel="Seguro Proteção Financeira" />
+        <QuoteWidget productLabel="Seguro Proteção Financeira" ctaLabel="Quero proteger minha renda hoje" />
       </section>
     </>
   );

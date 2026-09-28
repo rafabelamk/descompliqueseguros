@@ -12,7 +12,7 @@ const areas = [
   {
     title: "Seguro de vida",
     icon: <IconHeart />,
-    href: "/seguros/seguro-de-vida",
+    href: "/seguros#seguro-de-vida",
     cta: "Ver coberturas",
   },
   {
@@ -24,8 +24,8 @@ const areas = [
   {
     title: "Seguros em Geral",
     icon: <IconShield />,
-    href: "/seguros/ramos-elementares",
-    cta: "Ver coberturas",
+    href: "/seguros",
+    cta: "Ver todos os seguros",
   },
   {
     title: "Consórcio",
@@ -53,7 +53,7 @@ export default function HomePage() {
             className="text-[28px] font-light leading-tight sm:text-[36px]"
           />
           <div className="mt-9 flex justify-center">
-            <WhatsAppButton>Solicitar cotação</WhatsAppButton>
+            <WhatsAppButton>Quero me proteger hoje</WhatsAppButton>
           </div>
         </div>
       </ImageHero>

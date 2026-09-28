@@ -31,7 +31,7 @@ export default function PlanoDeSaudePage() {
         </div>
 
         <div className="mt-16 flex justify-center">
-          <WhatsAppButton>Solicitar cotação</WhatsAppButton>
+          <WhatsAppButton>Quero cuidar da minha saúde hoje</WhatsAppButton>
         </div>
       </section>
     </>

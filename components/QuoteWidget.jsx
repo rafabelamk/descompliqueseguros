@@ -10,10 +10,12 @@ const formatBRL = (n) =>
 // lá era um exemplo fictício fixo (nome, foto de banco de imagens e valor
 // inventados). Aqui virou uma calculadora de verdade — o visitante
 // preenche os próprios dados e manda a simulação pelo WhatsApp.
-export default function QuoteWidget({ productLabel }) {
+export default function QuoteWidget({ productLabel, ctaLabel = "Cotar agora" }) {
   const [nome, setNome] = useState("");
   const [idade, setIdade] = useState("");
   const [profissao, setProfissao] = useState("");
+  const [renda, setRenda] = useState("");
+  const [gasto, setGasto] = useState("");
   const [valor, setValor] = useState(200000);
 
   function handleSubmit(e) {
@@ -24,6 +26,8 @@ export default function QuoteWidget({ productLabel }) {
       nome && `Nome: ${nome}`,
       idade && `Idade: ${idade}`,
       profissao && `Profissão: ${profissao}`,
+      renda && `Renda mensal: ${renda}`,
+      gasto && `Média de gasto no mês: ${gasto}`,
     ].filter(Boolean);
     const text = encodeURIComponent(lines.join("\n"));
     window.open(
@@ -89,11 +93,33 @@ export default function QuoteWidget({ productLabel }) {
             />
           </div>
         </div>
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className="mb-1.5 block text-xs text-black/60">Renda mensal</label>
+            <input
+              value={renda}
+              onChange={(e) => setRenda(e.target.value)}
+              className="input-field"
+              placeholder="R$ 5.000"
+            />
+          </div>
+          <div>
+            <label className="mb-1.5 block text-xs text-black/60">
+              Média de gasto no mês
+            </label>
+            <input
+              value={gasto}
+              onChange={(e) => setGasto(e.target.value)}
+              className="input-field"
+              placeholder="R$ 3.000"
+            />
+          </div>
+        </div>
         <button
           type="submit"
           className="focus-ring micro-transition w-full rounded-input bg-orange py-4 text-base font-medium text-white hover:opacity-90"
         >
-          Cotar agora
+          {ctaLabel}
         </button>
       </form>
     </div>

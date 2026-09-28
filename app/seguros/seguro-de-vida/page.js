@@ -66,6 +66,7 @@ export default function SeguroDeVidaCoberturasPage() {
     <>
       <ProductIntro
         eyebrow="Seguro de vida"
+        ctaLabel="Quero me proteger hoje"
         title="Uma proteção que atravessa gerações."
         subhead="Cobertura contra morte natural, acidentes e invalidez, com assistência real nos momentos mais difíceis."
         photo={assets.seguroDeVidaHero}
@@ -79,7 +80,7 @@ export default function SeguroDeVidaCoberturasPage() {
       </section>
 
       <section className="mx-auto max-w-content px-6 pb-12 lg:px-10 lg:pb-20">
-        <QuoteWidget productLabel="Seguro de Vida" />
+        <QuoteWidget productLabel="Seguro de Vida" ctaLabel="Quero me proteger hoje" />
       </section>
     </>
   );

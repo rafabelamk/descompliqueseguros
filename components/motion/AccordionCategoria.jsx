@@ -50,19 +50,19 @@ export default function AccordionCategoria({
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="grid gap-6 pb-10 sm:grid-cols-2">
+            <div className="grid items-start gap-6 pb-10 sm:grid-cols-2">
               {items.map((item) => (
                 <a
                   key={item.title}
                   href={item.href}
-                  className="micro-transition card block p-10 hover:-translate-y-0.5"
+                  className="micro-transition card block p-7 hover:-translate-y-0.5"
                 >
                   <span className="text-orange">{item.icon}</span>
-                  <h3 className="mt-6 text-[20px] text-navy">{item.title}</h3>
+                  <h3 className="mt-4 text-[20px] text-navy">{item.title}</h3>
                   {item.description && (
                     <p className="mt-2 text-sm text-black/50">{item.description}</p>
                   )}
-                  <span className="micro-cta mt-6 inline-block text-navy">
+                  <span className="micro-cta mt-4 inline-block text-navy">
                     {item.cta ?? "Saiba mais"}
                   </span>
                 </a>

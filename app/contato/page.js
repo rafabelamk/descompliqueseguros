@@ -36,19 +36,19 @@ export default function ContatoPage() {
         <ContactForm />
 
         <div className="mx-auto mt-16 grid max-w-3xl gap-8 border-t border-line pt-10 sm:grid-cols-3">
-          <div>
+          <div className="min-w-0">
             <p className="eyebrow text-orange">E-mail</p>
-            <a href={`mailto:${contact.email}`} className="focus-ring mt-2 block text-lg text-navy hover:opacity-70">
+            <a href={`mailto:${contact.email}`} className="focus-ring mt-2 block break-words text-lg text-navy hover:opacity-70">
               {contact.email}
             </a>
           </div>
-          <div>
+          <div className="min-w-0">
             <p className="eyebrow text-orange">Telefone</p>
             <a href={contact.phoneHref} className="focus-ring mt-2 block text-lg text-navy hover:opacity-70">
               {contact.phoneDisplay}
             </a>
           </div>
-          <div>
+          <div className="min-w-0">
             <p className="eyebrow text-orange">WhatsApp</p>
             <a
               href={contact.whatsappUrl}
