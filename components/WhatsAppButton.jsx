@@ -3,6 +3,7 @@ import { contact } from "@/lib/site";
 export default function WhatsAppButton({
   children = "Solicitar cotação",
   variant = "solid",
+  message,
   className = "",
 }) {
   const base =
@@ -14,7 +15,7 @@ export default function WhatsAppButton({
 
   return (
     <a
-      href={contact.whatsappUrl}
+      href={message ? contact.whatsappLink(message) : contact.whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       className={`${base} ${styles} ${className}`}

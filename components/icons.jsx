@@ -18,6 +18,18 @@ export function IconHeart(props) {
   );
 }
 
+export function IconPaw(props) {
+  return (
+    <svg {...base} width={28} height={28} {...props}>
+      <circle cx="6" cy="10" r="1.7" />
+      <circle cx="10" cy="6" r="1.7" />
+      <circle cx="14.5" cy="6" r="1.7" />
+      <circle cx="18.5" cy="10" r="1.7" />
+      <path d="M12.2 11c-2.6 0-5.2 3.1-5.2 5.4 0 1.6 1.2 2.6 2.7 2.6 1 0 1.7-.5 2.5-.5s1.5.5 2.5.5c1.5 0 2.7-1 2.7-2.6 0-2.3-2.6-5.4-5.2-5.4z" />
+    </svg>
+  );
+}
+
 export function IconCross(props) {
   return (
     <svg {...base} width={28} height={28} {...props}>

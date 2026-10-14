@@ -5,7 +5,7 @@ import CountUp from "@/components/motion/CountUp";
 import AccordionCategoria from "@/components/motion/AccordionCategoria";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ImageStrip from "@/components/ImageStrip";
-import { IconShield, IconHeart, IconCross, IconCoins, IconHeadset } from "@/components/icons";
+import { IconShield, IconHeart, IconCross, IconPaw, IconCoins, IconHeadset } from "@/components/icons";
 import { assets } from "@/lib/assets";
 
 const areas = [
@@ -16,10 +16,16 @@ const areas = [
     cta: "Ver coberturas",
   },
   {
-    title: "Plano de saúde | Plano de saúde para Pet",
+    title: "Plano de saúde",
     icon: <IconCross />,
     href: "/plano-de-saude",
     cta: "Ver plano de saúde",
+  },
+  {
+    title: "Plano de saúde para Pet",
+    icon: <IconPaw />,
+    href: "/plano-de-saude-pet",
+    cta: "Ver plano para pet",
   },
   {
     title: "Seguros em Geral",
@@ -66,14 +72,14 @@ export default function HomePage() {
             className="text-[30px] text-ink sm:text-[36px]"
           />
           <span className="hidden text-[13px] text-black/60 sm:block">
-            5 produtos
+            6 produtos
           </span>
         </div>
 
         <AccordionCategoria
           icon={<IconShield />}
           title="Nossas soluções"
-          count={5}
+          count={6}
           defaultOpen
           items={areas}
         />
