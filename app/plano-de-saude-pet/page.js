@@ -1,6 +1,9 @@
 import ProductIntro from "@/components/ProductIntro";
 import CoberturasGrid from "@/components/CoberturasGrid";
+import Image from "next/image";
 import FaqList from "@/components/FaqList";
+import PetPlans from "@/components/PetPlans";
+import PetLeadForm from "@/components/PetLeadForm";
 import BlurWords from "@/components/motion/BlurWords";
 import Reveal from "@/components/motion/Reveal";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -164,10 +167,24 @@ export default function PlanoDeSaudePetPage() {
         ctaExternal
       />
 
+      <Reveal delay={0.1} className="mx-auto max-w-content px-6 pt-4 lg:px-10">
+        <Image
+          src="/plano-pet-hero.png"
+          alt="Cão e gato felizes"
+          width={657}
+          height={400}
+          priority
+          sizes="(min-width: 640px) 520px, 90vw"
+          className="mx-auto h-auto w-full max-w-[520px]"
+        />
+      </Reveal>
+
+      <PetPlans />
+
       <section id="vantagens" className="mx-auto max-w-content px-6 py-16 lg:px-10 lg:py-24">
         <BlurWords
           as="h2"
-          text="Planos para todo pet e para todos os momentos"
+          text="Por que ter um plano de saúde para o seu pet"
           className="mx-auto block max-w-3xl text-center text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.03em] text-ink"
         />
         <div className="mt-12">
@@ -258,22 +275,23 @@ export default function PlanoDeSaudePetPage() {
         </Reveal>
       </section>
 
-      <section className="mx-auto max-w-content px-6 pb-16 lg:px-10 lg:pb-24">
-        <Reveal className="rounded-[28px] bg-surface px-8 py-14 text-center sm:px-16 sm:py-20">
-          <h2 className="mx-auto max-w-2xl text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.03em] text-ink">
-            Vamos encontrar o plano ideal para o seu pet?
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-[19px] leading-snug text-muted">
-            Fale com a gente pelo WhatsApp e tire suas dúvidas sobre planos,
-            carências e rede credenciada.
-          </p>
-          <div className="mt-8 flex justify-center">
-            <WhatsAppButton message={whatsappMessage}>Quero proteger meu pet</WhatsAppButton>
+      <section id="contato" className="mx-auto max-w-content px-6 pb-16 lg:px-10 lg:pb-24">
+        <Reveal className="grid gap-10 rounded-[28px] bg-surface p-8 sm:p-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+          <div>
+            <h2 className="text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.03em] text-ink">
+              Vamos encontrar o plano ideal para o seu pet?
+            </h2>
+            <p className="mt-5 max-w-md text-[19px] leading-snug text-muted">
+              Preencha seus dados e continue a conversa pelo WhatsApp. A
+              mensagem já leva o plano de interesse e o tipo de pet, para
+              agilizar o atendimento.
+            </p>
+            <p className="mt-8 max-w-md text-[13px] leading-relaxed text-muted">
+              Valores, carências e coberturas seguem o regulamento do plano
+              vigente no momento da contratação.
+            </p>
           </div>
-          <p className="mx-auto mt-8 max-w-xl text-[13px] leading-relaxed text-muted">
-            Valores, carências e coberturas seguem o regulamento do plano
-            vigente no momento da contratação.
-          </p>
+          <PetLeadForm />
         </Reveal>
       </section>
     </>
