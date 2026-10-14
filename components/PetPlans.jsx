@@ -93,12 +93,16 @@ export default function PetPlans() {
             do seu pet.
           </p>
 
+          <p className="mt-8 text-center text-[13px] text-muted sm:hidden">
+            Deslize a tabela para o lado para comparar os planos
+          </p>
+
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 1, ease }}
-            className="mt-12 overflow-x-auto rounded-[28px] bg-white p-4 sm:p-8"
+            className="mt-4 overflow-x-auto rounded-[28px] bg-white p-4 sm:mt-12 sm:p-8"
           >
             <table className="w-full min-w-[760px] border-collapse text-left">
               <caption className="sr-only">Comparação das coberturas dos planos de saúde pet</caption>

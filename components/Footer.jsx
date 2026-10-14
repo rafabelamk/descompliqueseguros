@@ -28,10 +28,10 @@ export default function Footer() {
             <p className="text-xs font-semibold text-ink">
               Navegação
             </p>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-3 space-y-0.5">
               {nav.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="focus-ring micro-transition text-[14px] text-black/70 hover:text-ink hover:underline">
+                  <Link href={item.href} className="focus-ring micro-transition inline-block py-1.5 text-[14px] text-black/70 hover:text-ink hover:underline">
                     {item.label}
                   </Link>
                 </li>
@@ -43,14 +43,14 @@ export default function Footer() {
             <p className="text-xs font-semibold text-ink">
               Contatos
             </p>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-3 space-y-0.5">
               <li>
-                <a href={`mailto:${contact.email}`} className="focus-ring micro-transition text-[14px] text-black/70 hover:text-ink hover:underline">
+                <a href={`mailto:${contact.email}`} className="focus-ring micro-transition inline-block py-1.5 text-[14px] text-black/70 hover:text-ink hover:underline">
                   {contact.email}
                 </a>
               </li>
               <li>
-                <a href={contact.phoneHref} className="focus-ring micro-transition text-[14px] text-black/70 hover:text-ink hover:underline">
+                <a href={contact.phoneHref} className="focus-ring micro-transition inline-block py-1.5 text-[14px] text-black/70 hover:text-ink hover:underline">
                   {contact.phoneDisplay}
                 </a>
               </li>
@@ -59,7 +59,7 @@ export default function Footer() {
                   href={contact.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="focus-ring micro-transition text-[14px] text-black/70 hover:text-ink hover:underline"
+                  className="focus-ring micro-transition inline-block py-1.5 text-[14px] text-black/70 hover:text-ink hover:underline"
                 >
                   WhatsApp
                 </a>

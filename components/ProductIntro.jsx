@@ -17,7 +17,7 @@ export default function ProductIntro({
   ctaExternal = false,
 }) {
   return (
-    <section className="mx-auto max-w-content px-6 pb-8 pt-28 text-center lg:px-10 lg:pt-36">
+    <section className="mx-auto max-w-content px-6 pb-8 pt-24 text-center sm:pt-28 lg:px-10 lg:pt-36">
       <Reveal as="p" y={12} className="eyebrow text-accent">
         {eyebrow}
       </Reveal>

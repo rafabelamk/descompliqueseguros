@@ -56,7 +56,7 @@ export default function QuoteWidget({ productLabel, ctaLabel = "Cotar agora" }) 
     >
       <div className="flex flex-col justify-center">
         <p className="eyebrow text-accent">Valor do seguro</p>
-        <p className="mt-2 text-[52px] font-bold leading-none tracking-[-0.045em] tabular-nums text-ink sm:text-[64px]">
+        <p className="mt-2 whitespace-nowrap text-[clamp(32px,9vw,52px)] font-bold leading-none tracking-[-0.045em] tabular-nums text-ink sm:text-[64px]">
           {formatBRL(valor)}
         </p>
         <input
@@ -111,7 +111,7 @@ export default function QuoteWidget({ productLabel, ctaLabel = "Cotar agora" }) 
             />
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 items-end gap-4">
           <div>
             <label className={labelClass}>Renda mensal</label>
             <input

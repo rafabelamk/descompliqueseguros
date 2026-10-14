@@ -49,7 +49,7 @@ export default function Header() {
             aria-label={open ? "Fechar menu" : "Abrir menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="focus-ring flex flex-col gap-1.5 lg:hidden"
+            className="focus-ring -mr-2 flex h-11 w-11 flex-col items-center justify-center gap-1.5 lg:hidden"
           >
             <span className={`h-px w-5 bg-ink transition-transform duration-300 ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
             <span className={`h-px w-5 bg-ink transition-transform duration-300 ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
@@ -58,7 +58,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="animate-rise h-[calc(100vh-3.5rem)] overflow-y-auto border-t border-line/40 bg-white/95 px-6 py-8 backdrop-blur-[20px] lg:hidden">
+        <div className="animate-rise h-[calc(100dvh-3.5rem)] overflow-y-auto border-t border-line/40 bg-white/95 px-6 py-8 backdrop-blur-[20px] lg:hidden">
           <nav className="flex flex-col">
             {nav.map((item) => (
               <Link
