@@ -1,10 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { contact } from "@/lib/site";
+
+const ease = [0.2, 0.7, 0.2, 1];
+
+const MIN = 50000;
+const MAX = 2000000;
 
 const formatBRL = (n) =>
   n.toLocaleString("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 });
+
+const labelClass = "mb-1.5 block text-[13px] font-medium text-black/60";
 
 // Adaptação honesta do bloco "exemplo de cotação" do site de referência:
 // lá era um exemplo fictício fixo (nome, foto de banco de imagens e valor
@@ -17,6 +25,8 @@ export default function QuoteWidget({ productLabel, ctaLabel = "Cotar agora" }) 
   const [renda, setRenda] = useState("");
   const [gasto, setGasto] = useState("");
   const [valor, setValor] = useState(200000);
+
+  const pct = ((valor - MIN) / (MAX - MIN)) * 100;
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -37,31 +47,39 @@ export default function QuoteWidget({ productLabel, ctaLabel = "Cotar agora" }) 
   }
 
   return (
-    <div className="card grid gap-10 p-8 sm:grid-cols-2 sm:p-12">
-      <div>
-        <p className="eyebrow text-orange">Valor do seguro</p>
-        <p className="mt-2 text-[56px] leading-none text-navy sm:text-[64px]">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 1, ease }}
+      className="grid gap-12 rounded-[28px] bg-surface p-8 sm:grid-cols-2 sm:p-12"
+    >
+      <div className="flex flex-col justify-center">
+        <p className="eyebrow text-accent">Valor do seguro</p>
+        <p className="mt-2 text-[52px] font-bold leading-none tracking-[-0.045em] tabular-nums text-ink sm:text-[64px]">
           {formatBRL(valor)}
         </p>
         <input
           type="range"
-          min={50000}
-          max={2000000}
+          min={MIN}
+          max={MAX}
           step={10000}
           value={valor}
           onChange={(e) => setValor(Number(e.target.value))}
-          className="mt-6 w-full accent-orange"
+          aria-label="Valor do seguro"
+          style={{ "--pct": `${pct}%` }}
+          className="range-apple mt-8"
         />
-        <p className="mt-2 text-xs text-black/50">Arraste pra simular outro valor</p>
+        <p className="mt-2 text-[13px] text-muted">Arraste pra simular outro valor</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        <p className="text-sm font-light text-black/70">
+        <p className="text-[17px] leading-snug text-muted">
           Preencha seus dados e receba, no WhatsApp, uma simulação real pra
           essa cobertura.
         </p>
         <div>
-          <label className="mb-1.5 block text-xs text-black/60">Nome</label>
+          <label className={labelClass}>Nome</label>
           <input
             required
             value={nome}
@@ -72,7 +90,7 @@ export default function QuoteWidget({ productLabel, ctaLabel = "Cotar agora" }) 
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="mb-1.5 block text-xs text-black/60">Idade</label>
+            <label className={labelClass}>Idade</label>
             <input
               required
               type="number"
@@ -84,7 +102,7 @@ export default function QuoteWidget({ productLabel, ctaLabel = "Cotar agora" }) 
             />
           </div>
           <div>
-            <label className="mb-1.5 block text-xs text-black/60">Profissão</label>
+            <label className={labelClass}>Profissão</label>
             <input
               value={profissao}
               onChange={(e) => setProfissao(e.target.value)}
@@ -95,7 +113,7 @@ export default function QuoteWidget({ productLabel, ctaLabel = "Cotar agora" }) 
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="mb-1.5 block text-xs text-black/60">Renda mensal</label>
+            <label className={labelClass}>Renda mensal</label>
             <input
               value={renda}
               onChange={(e) => setRenda(e.target.value)}
@@ -104,9 +122,7 @@ export default function QuoteWidget({ productLabel, ctaLabel = "Cotar agora" }) 
             />
           </div>
           <div>
-            <label className="mb-1.5 block text-xs text-black/60">
-              Média de gasto no mês
-            </label>
+            <label className={labelClass}>Média de gasto no mês</label>
             <input
               value={gasto}
               onChange={(e) => setGasto(e.target.value)}
@@ -117,11 +133,11 @@ export default function QuoteWidget({ productLabel, ctaLabel = "Cotar agora" }) 
         </div>
         <button
           type="submit"
-          className="focus-ring micro-transition w-full rounded-input bg-orange py-4 text-base font-medium text-white hover:opacity-90"
+          className="focus-ring micro-transition min-h-[48px] w-full rounded-full bg-accent text-[17px] text-white hover:brightness-110 active:scale-[0.99]"
         >
           {ctaLabel}
         </button>
       </form>
-    </div>
+    </motion.div>
   );
 }

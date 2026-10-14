@@ -12,7 +12,7 @@ export default function MarqueeBand({ text = "DESCOMPLIQUE SEGUROS •" }) {
       <motion.p
         animate={{ x: ["0%", "-50%"] }}
         transition={{ duration: 30, ease: "linear", repeat: Infinity }}
-        className="whitespace-nowrap text-[56px] font-medium uppercase leading-none text-black/10 sm:text-[72px]"
+        className="whitespace-nowrap text-[56px] font-bold uppercase leading-none tracking-[-0.03em] text-black/[0.06] sm:text-[72px]"
       >
         {line}
         {line}
@@ -20,7 +20,7 @@ export default function MarqueeBand({ text = "DESCOMPLIQUE SEGUROS •" }) {
       <motion.p
         animate={{ x: ["-50%", "0%"] }}
         transition={{ duration: 34, ease: "linear", repeat: Infinity }}
-        className="mt-1 whitespace-nowrap text-[56px] font-medium uppercase leading-none text-black/10 sm:text-[72px]"
+        className="mt-1 whitespace-nowrap text-[56px] font-bold uppercase leading-none tracking-[-0.03em] text-black/[0.06] sm:text-[72px]"
       >
         {line}
         {line}

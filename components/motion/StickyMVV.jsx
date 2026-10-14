@@ -37,7 +37,7 @@ export default function StickyMVV({ items }) {
                 sizes="100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-navy-deep/55" />
+              <div className="absolute inset-0 bg-black/50" />
             </motion.div>
           );
         })}
@@ -57,7 +57,7 @@ export default function StickyMVV({ items }) {
                 <motion.p
                   key={item.label}
                   style={{ opacity: textOpacity, position: i === 0 ? "relative" : "absolute" }}
-                  className="mt-4 max-w-md text-2xl font-light text-white"
+                  className="mt-4 max-w-md text-[28px] font-semibold leading-tight tracking-[-0.02em] text-white"
                 >
                   {item.text}
                 </motion.p>
@@ -75,7 +75,7 @@ export default function StickyMVV({ items }) {
               return (
                 <motion.span
                   key={item.label}
-                  className="eyebrow text-right text-orange"
+                  className="eyebrow text-right text-accent-light"
                   style={{ opacity: labelOpacity }}
                 >
                   {item.label}

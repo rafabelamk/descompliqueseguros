@@ -73,7 +73,7 @@ export default function SeguroDeVidaCoberturasPage() {
       />
 
       <section id="cotacao" className="mx-auto max-w-content px-6 py-16 lg:px-10">
-        <BlurWords as="h2" text="Coberturas" className="text-center text-[28px] text-navy" />
+        <BlurWords as="h2" text="Coberturas" className="text-center text-[28px] text-ink" />
         <div className="mt-12">
           <CoberturasGrid items={coberturas} />
         </div>

@@ -30,12 +30,12 @@ export default function ClientesPage() {
         <BlurWords
           as="h1"
           text="Clientes"
-          className="text-[32px] font-light text-navy sm:text-[48px]"
+          className="text-[32px] text-ink sm:text-[48px]"
         />
       </section>
 
       <section className="mx-auto max-w-content px-6 pb-8 pt-6 lg:px-10">
-        <p className="mb-6 text-center text-[12px] uppercase tracking-[0.1em] text-black/50">
+        <p className="mb-6 text-center text-[13px] text-black/60">
           Empresas já atendidas
         </p>
         <ImageStrip
@@ -55,7 +55,7 @@ export default function ClientesPage() {
           <BlurWords
             as="h2"
             text="O que dizem sobre a Descomplique Seguros"
-            className="mx-auto max-w-xl text-center text-[28px] text-navy sm:text-[32px]"
+            className="mx-auto max-w-xl text-center text-[28px] text-ink sm:text-[32px]"
           />
           <div className="mt-14">
             <TestimonialCarousel items={depoimentos} />

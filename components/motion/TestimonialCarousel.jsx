@@ -9,13 +9,13 @@ export default function TestimonialCarousel({ items }) {
               i > 0 ? "border-l border-line" : ""
             }`}
           >
-            <p className="text-sm font-light leading-relaxed text-black/70">
+            <p className="text-[15px] leading-relaxed text-black/70">
               “{item.quote}”
             </p>
-            <p className="mt-6 text-[18px] font-medium uppercase tracking-[0.04em] text-navy">
+            <p className="mt-6 text-[17px] font-semibold tracking-[-0.01em] text-ink">
               {item.name}
             </p>
-            <p className="mt-1 text-xs font-light text-black/50">{item.role}</p>
+            <p className="mt-1 text-[13px] text-muted">{item.role}</p>
           </div>
         ))}
       </div>

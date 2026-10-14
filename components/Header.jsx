@@ -6,16 +6,16 @@ import { useState } from "react";
 import { nav, site, contact } from "@/lib/site";
 import { assets } from "@/lib/assets";
 
-// Cabeçalho fixo, sempre visível (sem esconder ao rolar), navy sobre
-// fundo claro semi-opaco com leve blur.
+// Cabeçalho fixo, sempre visível, branco translúcido com blur e saturação
+// (o mesmo vidro fosco da barra de navegação da Apple).
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 h-16 border-b border-line/60 bg-bg/90 text-navy backdrop-blur-[20px] sm:h-20">
+    <header className="fixed inset-x-0 top-0 z-50 h-14 border-b border-line/60 bg-white/75 backdrop-blur-[20px] backdrop-saturate-[180%] sm:h-16">
       <div className="mx-auto flex h-full max-w-content items-center justify-between px-6 lg:px-10">
         <Link href="/" className="focus-ring flex items-center gap-2">
-          <Image src={assets.logo} alt={site.name} width={160} height={91} className="h-12 w-auto sm:h-14" priority />
+          <Image src={assets.logo} alt={site.name} width={160} height={91} className="h-10 w-auto sm:h-11" priority />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
@@ -23,7 +23,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="focus-ring micro-transition text-[12px] font-light uppercase tracking-[0.1em] hover:opacity-70"
+              className="focus-ring micro-transition text-[12px] tracking-[-0.01em] text-ink/70 hover:text-ink"
             >
               {item.label}
             </Link>
@@ -36,7 +36,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Falar no WhatsApp"
-            className="focus-ring micro-transition hidden h-[30px] w-[30px] items-center justify-center rounded-[6px] border border-navy/60 hover:opacity-70 sm:flex"
+            className="focus-ring micro-transition hidden h-8 w-8 items-center justify-center rounded-full bg-surface text-ink hover:bg-line/60 sm:flex"
           >
             <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.15-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.148.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
@@ -51,22 +51,21 @@ export default function Header() {
             onClick={() => setOpen((v) => !v)}
             className="focus-ring flex flex-col gap-1.5 lg:hidden"
           >
-            <span className={`h-px w-6 bg-current transition-transform ${open ? "translate-y-1.5 rotate-45" : ""}`} />
-            <span className={`h-px w-6 bg-current transition-opacity ${open ? "opacity-0" : ""}`} />
-            <span className={`h-px w-6 bg-current transition-transform ${open ? "-translate-y-1.5 -rotate-45" : ""}`} />
+            <span className={`h-px w-5 bg-ink transition-transform duration-300 ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
+            <span className={`h-px w-5 bg-ink transition-transform duration-300 ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
           </button>
         </div>
       </div>
 
       {open && (
-        <div className="border-t border-line/40 bg-bg px-6 py-8 text-navy lg:hidden">
-          <nav className="flex flex-col gap-1">
+        <div className="animate-rise h-[calc(100vh-3.5rem)] overflow-y-auto border-t border-line/40 bg-white/95 px-6 py-8 backdrop-blur-[20px] lg:hidden">
+          <nav className="flex flex-col">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="focus-ring py-2 text-2xl font-extralight"
+                className="focus-ring border-b border-line/60 py-3 text-[28px] font-semibold tracking-[-0.02em] text-ink"
               >
                 {item.label}
               </Link>

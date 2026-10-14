@@ -1,35 +1,65 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import BlurWords from "@/components/motion/BlurWords";
+import Reveal from "@/components/motion/Reveal";
+
+const ease = [0.2, 0.7, 0.2, 1];
 
 export default function ProductIntro({ eyebrow, title, subhead, photo, ctaLabel = "Cotar agora" }) {
   return (
-    <section className="mx-auto max-w-content px-6 pt-28 lg:px-10 lg:pt-32">
-      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-        <div>
-          <p className="eyebrow text-orange">{eyebrow}</p>
-          <BlurWords
-            as="h1"
-            text={title}
-            className="mt-3 text-[30px] leading-tight text-navy sm:text-[38px]"
-          />
-          <p className="mt-5 max-w-md text-base font-light leading-relaxed text-black/70">
-            {subhead}
-          </p>
-          <a href="#cotacao" className="micro-cta mt-6 inline-block text-navy">
-            {ctaLabel}
-          </a>
-        </div>
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-card">
+    <section className="mx-auto max-w-content px-6 pb-8 pt-28 text-center lg:px-10 lg:pt-36">
+      <Reveal as="p" y={12} className="eyebrow text-accent">
+        {eyebrow}
+      </Reveal>
+      <BlurWords
+        as="h1"
+        text={title}
+        delay={0.1}
+        className="mx-auto mt-3 block max-w-4xl text-[clamp(40px,7vw,76px)] font-bold leading-[1.04] tracking-[-0.04em] text-ink"
+      />
+      <Reveal
+        as="p"
+        delay={0.35}
+        y={14}
+        className="mx-auto mt-6 max-w-2xl text-[clamp(19px,2.2vw,24px)] leading-[1.35] tracking-[-0.016em] text-muted"
+      >
+        {subhead}
+      </Reveal>
+      <Reveal delay={0.5} y={14} className="mt-8 flex justify-center">
+        <a
+          href="#cotacao"
+          className="focus-ring micro-transition inline-flex min-h-[44px] items-center justify-center rounded-full bg-accent px-7 text-[17px] text-white hover:brightness-110"
+        >
+          {ctaLabel}
+        </a>
+      </Reveal>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40, scale: 0.97 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1.2, ease }}
+        className="relative mx-auto mt-14 aspect-[16/9] w-full max-w-[920px] overflow-hidden rounded-[28px] bg-surface"
+      >
+        <motion.div
+          className="absolute inset-0"
+          initial={{ scale: 1.08 }}
+          whileInView={{ scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.8, ease }}
+        >
           <Image
             src={photo}
             alt={title}
             fill
             priority
-            sizes="(min-width: 1024px) 50vw, 100vw"
+            sizes="(min-width: 960px) 920px, 100vw"
             className="object-cover"
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

@@ -3,26 +3,27 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-// M10 (adaptado) — hero CONTIDO (não full-bleed), com bordas arredondadas,
-// no lugar do vídeo do site de referência (não temos vídeo institucional).
-// Ficou num container menor propositalmente: as fotos reais migradas do
-// Wix não têm resolução pra cobrir a tela inteira sem pixelizar.
+const ease = [0.2, 0.7, 0.2, 1];
+
+// Hero contido, com bordas arredondadas, no lugar do vídeo do site de
+// referência (não temos vídeo institucional). A foto "assenta" (zoom
+// de 1.08 para 1) quando a página abre, em vez do zoom infinito de antes.
 export default function ImageHero({ src, alt, tone = "navy", children }) {
   const overlay =
     tone === "navy"
-      ? "bg-navy/75"
+      ? "bg-black/45"
       : tone === "orange"
-      ? "bg-orange/75"
-      : "bg-navy-deep/70";
+      ? "bg-accent/55"
+      : "bg-black/55";
 
   return (
     <section className="mx-auto max-w-content px-6 pb-8 pt-24 lg:px-10 lg:pt-28">
-      <div className="relative h-[50vh] max-h-[420px] min-h-[260px] w-full overflow-hidden rounded-card">
+      <div className="relative h-[50vh] max-h-[460px] min-h-[280px] w-full overflow-hidden rounded-[28px]">
         <motion.div
           className="absolute inset-0"
-          initial={{ scale: 1 }}
-          animate={{ scale: 1.05 }}
-          transition={{ duration: 24, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
+          initial={{ scale: 1.08 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.8, ease }}
         >
           <Image
             src={src}

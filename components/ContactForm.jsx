@@ -40,10 +40,10 @@ export default function ContactForm() {
     <div className="card mx-auto max-w-3xl p-8 sm:p-14">
       <div className="grid gap-10 sm:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <div>
-          <h2 className="text-[28px] leading-tight text-navy sm:text-[32px]">
+          <h2 className="text-[28px] leading-tight text-ink sm:text-[32px]">
             Como podemos te ajudar?
           </h2>
-          <p className="mt-4 text-sm font-light text-black/60">
+          <p className="mt-4 text-sm text-black/60">
             Preencha o formulário para que a nossa equipe analise suas
             necessidades e entre em contato — a mensagem é enviada direto
             para o nosso WhatsApp.
@@ -52,7 +52,7 @@ export default function ContactForm() {
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="mb-1.5 block text-xs text-black/60">Digite seu nome</label>
+            <label className="mb-1.5 block text-[13px] font-medium text-black/60">Digite seu nome</label>
             <input
               required
               value={form.nome}
@@ -62,7 +62,7 @@ export default function ContactForm() {
             />
           </div>
           <div>
-            <label className="mb-1.5 block text-xs text-black/60">Digite seu melhor e-mail</label>
+            <label className="mb-1.5 block text-[13px] font-medium text-black/60">Digite seu melhor e-mail</label>
             <input
               required
               type="email"
@@ -73,7 +73,7 @@ export default function ContactForm() {
             />
           </div>
           <div>
-            <label className="mb-1.5 block text-xs text-black/60">Telefone</label>
+            <label className="mb-1.5 block text-[13px] font-medium text-black/60">Telefone</label>
             <input
               value={form.telefone}
               onChange={update("telefone")}
@@ -82,7 +82,7 @@ export default function ContactForm() {
             />
           </div>
           <div>
-            <label className="mb-1.5 block text-xs text-black/60">Assunto</label>
+            <label className="mb-1.5 block text-[13px] font-medium text-black/60">Assunto</label>
             <select value={form.assunto} onChange={update("assunto")} className="input-field">
               <option value="">Selecione...</option>
               {assuntos.map((a) => (
@@ -93,7 +93,7 @@ export default function ContactForm() {
             </select>
           </div>
           <div>
-            <label className="mb-1.5 block text-xs text-black/60">Mensagem</label>
+            <label className="mb-1.5 block text-[13px] font-medium text-black/60">Mensagem</label>
             <textarea
               required
               rows={4}
@@ -106,7 +106,7 @@ export default function ContactForm() {
 
           <button
             type="submit"
-            className="focus-ring micro-transition w-full rounded-input bg-orange py-4 text-base font-medium text-white hover:opacity-90"
+            className="focus-ring micro-transition min-h-[48px] w-full rounded-full bg-accent text-[17px] text-white hover:brightness-110 active:scale-[0.99]"
           >
             Enviar
           </button>

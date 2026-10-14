@@ -17,7 +17,7 @@ export default function PhotoBanner({ src, alt, title }) {
       <BlurWords
         as="h1"
         text={title}
-        className="mt-8 text-[32px] font-light text-navy sm:text-[40px]"
+        className="mt-8 text-[32px] text-ink sm:text-[40px]"
       />
     </section>
   );

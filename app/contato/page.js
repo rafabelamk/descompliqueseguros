@@ -15,19 +15,19 @@ export default function ContatoPage() {
         <BlurWords
           as="h1"
           text="Fique seguro hoje"
-          className="text-[30px] font-light text-white sm:text-[42px]"
+          className="text-[30px] text-white sm:text-[42px]"
         />
       </ImageHero>
 
       <section className="mx-auto max-w-2xl px-6 text-center">
-        <p className="text-[16px] font-light leading-relaxed text-black/70">
+        <p className="text-[16px] leading-relaxed text-black/70">
           Em 2022, com 612,9 mil acidentes e 2.538 óbitos registrados para
           pessoas com carteira assinada, a mortalidade no mercado de
           trabalho formal voltou a apresentar a maior taxa dos últimos dez
           anos: 7 notificações a cada 100 mil vínculos empregatícios, em
           média.
         </p>
-        <p className="mt-4 text-[16px] font-light text-black/70">
+        <p className="mt-4 text-[16px] text-black/70">
           Não se preocupe! Temos a solução pra você.
         </p>
       </section>
@@ -37,24 +37,24 @@ export default function ContatoPage() {
 
         <div className="mx-auto mt-16 grid max-w-3xl gap-8 border-t border-line pt-10 sm:grid-cols-3">
           <div className="min-w-0">
-            <p className="eyebrow text-orange">E-mail</p>
-            <a href={`mailto:${contact.email}`} className="focus-ring mt-2 block break-words text-lg text-navy hover:opacity-70">
+            <p className="eyebrow text-accent">E-mail</p>
+            <a href={`mailto:${contact.email}`} className="focus-ring mt-2 block break-words text-lg text-ink hover:opacity-70">
               {contact.email}
             </a>
           </div>
           <div className="min-w-0">
-            <p className="eyebrow text-orange">Telefone</p>
-            <a href={contact.phoneHref} className="focus-ring mt-2 block text-lg text-navy hover:opacity-70">
+            <p className="eyebrow text-accent">Telefone</p>
+            <a href={contact.phoneHref} className="focus-ring mt-2 block text-lg text-ink hover:opacity-70">
               {contact.phoneDisplay}
             </a>
           </div>
           <div className="min-w-0">
-            <p className="eyebrow text-orange">WhatsApp</p>
+            <p className="eyebrow text-accent">WhatsApp</p>
             <a
               href={contact.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="focus-ring mt-2 block text-lg text-navy hover:opacity-70"
+              className="focus-ring mt-2 block text-lg text-ink hover:opacity-70"
             >
               Conversar agora
             </a>

@@ -2,19 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+/* Visual minimalista inspirado na Apple: fundo branco, cinza claro nas
+   seções alternadas, azul como única cor de destaque, tipografia grande e
+   com espaçamento entre letras fechado. */
+
+:root {
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --accent: #0071e3;
+  --line: #d2d2d7;
 }
 
-body {
-  background: #f2f2ed;
-  color: rgba(0, 0, 0, 0.8);
-  font-weight: 300;
-  letter-spacing: 0.02em;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: #ffffff;
+    color: #1d1d1f;
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: -0.011em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
 }
 
 ::selection {
-  background-color: #ee7d19;
+  background-color: #0071e3;
   color: #ffffff;
 }
 
@@ -30,46 +60,125 @@ body {
 }
 
 .focus-ring:focus-visible {
-  outline: 2px solid #ee7d19;
+  outline: 2px solid #0071e3;
   outline-offset: 3px;
+  border-radius: 6px;
 }
 
 .eyebrow {
   font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
+/* Link de ação no padrão "Saiba mais ›" */
 .micro-cta {
   display: inline-block;
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding-bottom: 6px;
-  border-bottom: 1px solid currentColor;
-  transition: opacity 0.3s ease-in-out;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.011em;
+  color: #0071e3;
+  transition: opacity 0.3s var(--ease);
+}
+.micro-cta::after {
+  content: " ›";
 }
 .micro-cta:hover {
-  opacity: 0.5;
+  text-decoration: underline;
 }
 
+/* Cards cinza claro sobre fundo branco; sobre seções cinza viram brancos. */
 .card {
-  background: #ffffff;
-  border-radius: 20px;
+  background: var(--card, #f5f5f7);
+  border-radius: 22px;
+}
+.bg-surface {
+  --card: #ffffff;
 }
 
 .input-field {
-  background: rgba(187, 187, 187, 0.15);
-  border-radius: 10px;
-  border: 0;
-  padding: 14px 16px;
-  font-size: 14px;
+  display: block;
   width: 100%;
+  background: #ffffff;
+  border: 1px solid #d2d2d7;
+  border-radius: 12px;
+  padding: 13px 16px;
+  font-size: 17px;
+  line-height: 1.3;
+  color: #1d1d1f;
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
 }
 .input-field::placeholder {
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.35);
+}
+.input-field:focus {
+  outline: none;
+  border-color: #0071e3;
+  box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.18);
+}
+
+/* Slider no estilo iOS: trilho fino, preenchimento azul, bolinha branca. */
+.range-apple {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 28px;
+  background: transparent;
+  cursor: pointer;
+}
+.range-apple:focus {
+  outline: none;
+}
+.range-apple::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    #0071e3 var(--pct, 0%),
+    #d2d2d7 var(--pct, 0%)
+  );
+}
+.range-apple::-moz-range-track {
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    #0071e3 var(--pct, 0%),
+    #d2d2d7 var(--pct, 0%)
+  );
+}
+.range-apple::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  margin-top: -12px;
+  border-radius: 50%;
+  border: 0;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.28), 0 0 0 0.5px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.range-apple::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 0;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.28), 0 0 0 0.5px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.range-apple:active::-webkit-slider-thumb {
+  transform: scale(1.08);
+}
+.range-apple:active::-moz-range-thumb {
+  transform: scale(1.08);
+}
+.range-apple:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.28), 0 0 0 4px rgba(0, 113, 227, 0.35);
+}
+.range-apple:focus-visible::-moz-range-thumb {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.28), 0 0 0 4px rgba(0, 113, 227, 0.35);
 }
 
 .testimonials-mask {
@@ -90,5 +199,6 @@ body {
 }
 
 .micro-transition {
-  transition: transform 0.18s cubic-bezier(0.2, 0, 0, 1), opacity 0.3s ease-in-out;
+  transition: transform 0.3s var(--ease), opacity 0.3s var(--ease),
+    filter 0.3s var(--ease), background-color 0.3s var(--ease);
 }

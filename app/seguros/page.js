@@ -49,8 +49,8 @@ export default function SegurosPage() {
   return (
     <>
       <section className="mx-auto max-w-content px-6 pb-4 pt-24 text-center lg:px-10 lg:pt-28">
-        <BlurWords as="h1" text="Seguros" className="text-[32px] font-light text-navy sm:text-[48px]" />
-        <p className="mx-auto mt-4 max-w-xl text-base font-light text-black/70">
+        <BlurWords as="h1" text="Seguros" className="text-[32px] text-ink sm:text-[48px]" />
+        <p className="mx-auto mt-4 max-w-xl text-base text-black/70">
           Conheça as soluções da Descomplique Seguros e encontre a proteção certa pra você.
         </p>
       </section>
@@ -60,15 +60,15 @@ export default function SegurosPage() {
           {produtos.map((produto) => (
             <div key={produto.slug} id={produto.slug} className="scroll-mt-24 py-10">
               <div className="grid gap-6 sm:grid-cols-[auto_1fr_auto] sm:items-center">
-                <span className="text-orange">{produto.icon}</span>
+                <span className="text-accent">{produto.icon}</span>
                 <div>
-                  <h2 className="text-[22px] text-navy">{produto.title}</h2>
-                  <p className="mt-2 max-w-xl text-sm font-light leading-relaxed text-black/60">
+                  <h2 className="text-[22px] text-ink">{produto.title}</h2>
+                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-black/60">
                     {produto.subhead}
                   </p>
                   <Link
                     href={`/seguros/${produto.slug}`}
-                    className="micro-cta mt-4 inline-block text-navy"
+                    className="micro-cta mt-4 inline-block"
                   >
                     Ver coberturas completas
                   </Link>

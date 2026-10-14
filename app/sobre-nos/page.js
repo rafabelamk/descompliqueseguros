@@ -41,7 +41,7 @@ export default function SobreNosPage() {
         <BlurWords
           as="h1"
           text="Sobre nós"
-          className="text-[32px] font-light text-navy sm:text-[48px]"
+          className="text-[32px] text-ink sm:text-[48px]"
         />
       </section>
 
@@ -64,26 +64,26 @@ export default function SobreNosPage() {
       <section className="px-6 py-8 lg:px-10 lg:py-10">
         <div className="mx-auto grid max-w-content grid-cols-3 gap-4 sm:gap-6">
           <div className="card flex flex-col items-center justify-center p-6 text-center sm:p-8">
-            <p className="text-[36px] text-navy sm:text-[50px]">
+            <p className="text-[36px] text-ink sm:text-[50px]">
               <CountUp to={30} prefix="+" />
             </p>
-            <p className="mt-2 text-[10px] uppercase tracking-[0.1em] text-black/50 sm:text-[12px]">
+            <p className="mt-2 text-[13px] text-black/60">
               anos de experiência
             </p>
           </div>
           <div className="card flex flex-col items-center justify-center p-6 text-center sm:p-8">
-            <p className="text-[36px] text-navy sm:text-[50px]">
+            <p className="text-[36px] text-ink sm:text-[50px]">
               <CountUp to={20} prefix="+" />
             </p>
-            <p className="mt-2 text-[10px] uppercase tracking-[0.1em] text-black/50 sm:text-[12px]">
+            <p className="mt-2 text-[13px] text-black/60">
               anos no mercado
             </p>
           </div>
           <div className="card flex flex-col items-center justify-center p-6 text-center sm:p-8">
-            <p className="text-[36px] text-navy sm:text-[50px]">
+            <p className="text-[36px] text-ink sm:text-[50px]">
               Top <CountUp to={50} />
             </p>
-            <p className="mt-2 text-[10px] uppercase tracking-[0.1em] text-black/50 sm:text-[12px]">
+            <p className="mt-2 text-[13px] text-black/60">
               corretores do Brasil
             </p>
           </div>
@@ -94,13 +94,13 @@ export default function SobreNosPage() {
         <div className="grid gap-6 sm:grid-cols-3">
           {highlights.map((section) => (
             <div key={section.title} className="card p-8">
-              <h2 className="flex items-center gap-2.5 text-[22px] text-navy">
-                <span className="text-orange">{section.icon}</span>
+              <h2 className="flex items-center gap-2.5 text-[22px] text-ink">
+                <span className="text-accent">{section.icon}</span>
                 {section.title}
               </h2>
               <div className="mt-4 space-y-3">
                 {section.body.map((paragraph, i) => (
-                  <p key={i} className="text-sm font-light leading-relaxed text-black/70">
+                  <p key={i} className="text-sm leading-relaxed text-black/70">
                     {paragraph}
                   </p>
                 ))}

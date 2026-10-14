@@ -15,7 +15,7 @@ export default function PlanoDeSaudePage() {
         <BlurWords
           as="h1"
           text="Plano de saúde"
-          className="mx-auto max-w-xl text-center text-[30px] font-light text-white sm:text-[42px]"
+          className="mx-auto max-w-xl text-center text-[30px] text-white sm:text-[42px]"
         />
       </ImageHero>
 
@@ -23,7 +23,7 @@ export default function PlanoDeSaudePage() {
         <BlurWords
           as="h2"
           text="Algumas das nossas redes credenciadas"
-          className="text-center text-[24px] text-navy sm:text-[30px]"
+          className="text-center text-[24px] text-ink sm:text-[30px]"
         />
 
         <div className="mt-14">

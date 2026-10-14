@@ -2,40 +2,38 @@
 
 import { motion } from "framer-motion";
 
+const ease = [0.2, 0.7, 0.2, 1];
+
 /**
- * M1 — cada palavra entra com blur(4px→0) + opacity 0→1 + y 12→0,
- * em stagger de 0.04s, disparado uma vez ao entrar na viewport.
- * Passe `bold` com as palavras (sem pontuação) que devem sair em peso 500.
+ * Título que entra com fade + subida suave ao aparecer na tela (uma vez).
+ * Mantém o nome e as props antigas para não mexer nas páginas: `bold` ainda
+ * destaca as palavras listadas (sem pontuação), agora em peso 700 contra
+ * 500 do restante.
  */
-export default function BlurWords({ text, bold = [], as = "span", className = "" }) {
-  const words = text.split(" ");
+export default function BlurWords({ text, bold = [], as = "span", className = "", delay = 0 }) {
   const Wrapper = motion[as] ?? motion.span;
+  const words = text.split(" ");
+  const hasEmphasis = bold.length > 0;
 
   return (
     <Wrapper
-      className={className}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.6 }}
-      transition={{ staggerChildren: 0.04 }}
+      className={`${as === "span" ? "inline-block" : ""} ${className}`}
+      initial={{ opacity: 0, y: 14 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{ duration: 1, ease, delay }}
     >
-      {words.map((word, i) => {
-        const bare = word.replace(/[.,!?:;]/g, "");
-        const isBold = bold.includes(bare);
-        return (
-          <motion.span
-            key={i}
-            className={`inline-block ${isBold ? "font-medium" : "font-light"}`}
-            variants={{
-              hidden: { opacity: 0, y: 12, filter: "blur(4px)" },
-              show: { opacity: 1, y: 0, filter: "blur(0px)" },
-            }}
-            transition={{ type: "spring", stiffness: 120, damping: 20 }}
-          >
-            {word}&nbsp;
-          </motion.span>
-        );
-      })}
+      {hasEmphasis
+        ? words.map((word, i) => {
+            const bare = word.replace(/[.,!?:;]/g, "");
+            return (
+              <span key={i} className={bold.includes(bare) ? "font-bold" : "font-medium"}>
+                {word}
+                {i < words.length - 1 ? " " : ""}
+              </span>
+            );
+          })
+        : text}
     </Wrapper>
   );
 }
