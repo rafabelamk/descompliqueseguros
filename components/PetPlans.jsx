@@ -2,11 +2,22 @@
 
 import { motion } from "framer-motion";
 import BlurWords from "@/components/motion/BlurWords";
-import { IconPaw } from "@/components/icons";
+import { IconPaw, IconStethoscope, IconBed, IconShieldPlus } from "@/components/icons";
 import { contact } from "@/lib/site";
 import { petPlans, petFeatures, petPlanMessage } from "@/lib/petPlans";
 
 const ease = [0.2, 0.7, 0.2, 1];
+
+// Um ícone por plano, que sobe de nível junto com a cobertura:
+// cuidado básico, rotina, internação e proteção máxima.
+const planIcons = {
+  leve: <IconPaw />,
+  tranquilo: <IconStethoscope />,
+  ideal: <IconBed />,
+  essencial: <IconShieldPlus />,
+};
+
+const shortName = (plan) => plan.name.replace("Petlove ", "");
 
 const linkFor = (plan) => contact.whatsappLink(petPlanMessage(plan.name));
 
@@ -19,7 +30,7 @@ function Check() {
 }
 
 const pillButton =
-  "focus-ring micro-transition inline-flex min-h-[44px] items-center justify-center rounded-full bg-accent px-6 text-[16px] text-white hover:brightness-110";
+  "focus-ring micro-transition inline-flex min-h-[44px] items-center justify-center whitespace-nowrap rounded-full bg-accent px-6 text-[16px] text-white hover:brightness-110";
 
 export default function PetPlans() {
   return (
@@ -40,8 +51,8 @@ export default function PetPlans() {
               transition={{ delay: (i % 4) * 0.08, duration: 0.9, ease }}
               className="card flex flex-col items-center p-8 text-center"
             >
-              <span className="text-accent">
-                <IconPaw />
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white text-accent">
+                {planIcons[plan.id]}
               </span>
               <h3 className="mt-4 text-[24px] leading-[1.15] tracking-[-0.02em] text-ink">
                 {plan.name}
@@ -49,9 +60,12 @@ export default function PetPlans() {
               <span className="mt-3 inline-block rounded-full bg-white px-3 py-1 text-[13px] text-muted">
                 {plan.tagline}
               </span>
-              <p className="mt-6 text-[40px] font-bold leading-none tracking-[-0.04em] tabular-nums text-ink">
-                R$ {plan.price}
-                <span className="ml-1 text-[17px] font-normal tracking-normal text-muted">/mês</span>
+              <p className="mt-6 flex items-baseline justify-center gap-1 whitespace-nowrap text-ink">
+                <span className="text-[18px] font-semibold">R$</span>
+                <span className="text-[36px] font-bold leading-none tracking-[-0.04em] tabular-nums">
+                  {plan.price}
+                </span>
+                <span className="text-[16px] text-muted">/mês</span>
               </p>
               <p className="mt-2 text-[13px] text-muted">Economize 2 meses no plano anual</p>
               <a
@@ -60,7 +74,7 @@ export default function PetPlans() {
                 rel="noopener noreferrer"
                 className={`${pillButton} mt-8 w-full`}
               >
-                Quero o {plan.name}
+                Quero o {shortName(plan)}
               </a>
             </motion.div>
           ))}
@@ -145,7 +159,7 @@ export default function PetPlans() {
                         rel="noopener noreferrer"
                         className={`${pillButton} min-h-[40px] w-full px-3 text-[14px]`}
                       >
-                        Quero o {plan.name}
+                        Quero o {shortName(plan)}
                       </a>
                     </td>
                   ))}

@@ -30,6 +30,34 @@ export function IconPaw(props) {
   );
 }
 
+export function IconStethoscope(props) {
+  return (
+    <svg {...base} width={28} height={28} {...props}>
+      <path d="M6 4v5a4 4 0 0 0 8 0V4M5 4h2M13 4h2" />
+      <path d="M10 13v2a4 4 0 0 0 8 0v-1" />
+      <circle cx="18" cy="12" r="2" />
+    </svg>
+  );
+}
+
+export function IconBed(props) {
+  return (
+    <svg {...base} width={28} height={28} {...props}>
+      <path d="M3 6v12M3 15h18v3M21 18v-5a2 2 0 0 0-2-2h-8v4" />
+      <circle cx="7" cy="11" r="1.8" />
+    </svg>
+  );
+}
+
+export function IconShieldPlus(props) {
+  return (
+    <svg {...base} width={28} height={28} {...props}>
+      <path d="M12 3l7 3v6c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9V6l7-3z" />
+      <path d="M12 9v6M9 12h6" />
+    </svg>
+  );
+}
+
 export function IconCross(props) {
   return (
     <svg {...base} width={28} height={28} {...props}>
