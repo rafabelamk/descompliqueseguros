@@ -20,15 +20,20 @@ export default function ContatoPage() {
       </ImageHero>
 
       <section className="mx-auto max-w-2xl px-6 text-center">
-        <p className="text-[16px] leading-relaxed text-black/70">
-          Em 2022, com 612,9 mil acidentes e 2.538 óbitos registrados para
-          pessoas com carteira assinada, a mortalidade no mercado de
-          trabalho formal voltou a apresentar a maior taxa dos últimos dez
-          anos: 7 notificações a cada 100 mil vínculos empregatícios, em
-          média.
+        <p className="text-[17px] leading-relaxed text-black/70">
+          Em 2024, o INSS registrou cerca de 834 mil acidentes de trabalho no
+          Brasil, 10,6% a mais que em 2023. Em 2025, foram 4,1 milhões de
+          benefícios por incapacidade temporária, o maior número desde 2021.
         </p>
-        <p className="mt-4 text-[16px] text-black/70">
-          Não se preocupe! Temos a solução pra você.
+        <p className="mt-4 text-[17px] leading-relaxed text-black/70">
+          Um acidente ou um diagnóstico pode afastar você do trabalho. Seguro
+          de vida é para ser usado em vida: com coberturas como invalidez por
+          acidente, diárias por incapacidade temporária e doenças graves,
+          conforme a apólice. Fale com a gente e faça uma simulação sem
+          compromisso.
+        </p>
+        <p className="mt-4 text-[13px] text-muted">
+          Fonte: Ministério da Previdência Social.
         </p>
       </section>
 
